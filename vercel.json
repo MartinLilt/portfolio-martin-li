@@ -1,0 +1,12 @@
+{
+  "name": "site-portfolio",
+  "root": "front-end",
+  "build": {
+    "env": {
+      "MY_ENV_VARIABLE": "my-value"
+    }
+  },
+  "env": {
+    "API_KEY": "your-api-key"
+  }
+}
