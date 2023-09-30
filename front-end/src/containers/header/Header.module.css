@@ -1,0 +1,32 @@
+.section {
+    @apply px-4 flex justify-between items-center mt-4;
+}
+
+.nav {
+    @apply hidden w-[55%] h-[58px] xl:w-[35%] xl:block;
+}
+
+.list {
+    @apply flex justify-between items-center h-full;
+}
+
+.sentence {
+    @apply text-primary uppercase text-sm 
+    cursor-pointer flex justify-between items-center h-full;
+}
+
+.link {
+    @apply p-4 md:px-8 rounded-xl text-secondary 
+    bg-primary border-[0.05rem] border-primary 
+    flex mr-4 xl:mr-0 hover:underline;
+}
+
+.action {
+    @apply hidden md:flex mr-2;
+}
+
+.button {
+    @apply p-4 md:px-8 rounded-xl text-primary 
+    bg-secondary border-[0.05rem] border-primary 
+    hover:text-secondary hover:bg-primary flex xl:hidden;
+}

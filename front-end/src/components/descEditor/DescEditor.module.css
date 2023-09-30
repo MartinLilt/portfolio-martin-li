@@ -1,0 +1,7 @@
+.desc {
+    @apply leading-9 font-light text-xl;
+}
+
+.desc span {
+    @apply text-3xl md:text-5xl xl:text-6xl font-normal;
+}

@@ -1,0 +1,5 @@
+.title {
+    @apply uppercase text-primary text-3xl font-light
+    after:content-[''] after:block after:w-full after:h-[0.05rem]
+    after:bg-op-primary after:mt-4 after:mb-20;
+}

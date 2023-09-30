@@ -1,0 +1,15 @@
+.container {
+  @apply pb-40;
+}
+
+.content {
+  @apply text-primary text-xl font-light xl:w-1/2;
+}
+
+.title {
+    @apply uppercase mb-4;
+}
+
+.text {
+    @apply leading-9;
+}
