@@ -1,0 +1,7 @@
+.ranked {
+    @apply flex text-accent;
+}
+
+.ranked svg {
+    @apply mr-1 last:mr-0;
+}

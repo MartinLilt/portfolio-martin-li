@@ -1,0 +1,49 @@
+.section {
+  @apply pb-40;
+}
+
+.title {
+  @apply uppercase text-primary text-3xl font-light
+    after:content-[''] after:block after:w-full after:h-[0.05rem]
+    after:bg-op-primary after:mt-4 after:mb-20;
+}
+
+.sentence {
+  @apply mb-20 last:mb-0 xl:w-x1/2;
+}
+
+.sentence:last-child ul {
+  @apply after:hidden;
+}
+
+.sentence:nth-last-child(2) ul {
+  @apply xl:after:hidden;
+}
+
+.content {
+  @apply relative block h-[400px] mb-12;
+}
+
+.image {
+  @apply object-cover rounded-xl;
+}
+
+.text {
+  @apply text-primary text-3xl 
+    md:text-5xl xl:text-6xl mb-4 leading-[50px] xl:leading-[80px];
+}
+
+.taglist {
+  @apply text-primary flex flex-wrap translate-x-[-0.25rem] 
+    after:content-[''] after:block after:w-full after:h-[0.05rem] after:bg-primary after:mt-9;
+}
+
+.tagsentence {
+  @apply p-2 px-4 rounded-xl 
+    border-[0.05rem] border-op-primary flex max-w-max 
+    font-light capitalize m-1;
+}
+
+.list {
+  @apply xl:flex xl:flex-wrap xl:justify-between;
+}

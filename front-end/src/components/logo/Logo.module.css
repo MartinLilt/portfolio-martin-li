@@ -1,0 +1,3 @@
+.logo {
+    @apply text-primary uppercase font-bold select-none;
+}

@@ -1,0 +1,4 @@
+.time {
+    @apply p-2 px-4 rounded-xl text-primary border-[0.05rem] border-op-primary 
+    flex relative font-light capitalize w-[225px] h-[40px];
+}

@@ -1,0 +1,46 @@
+.section {
+    @apply pb-40;
+}
+
+.title {
+    @apply uppercase text-primary text-3xl font-light
+    after:content-[''] after:block after:w-full after:h-[0.05rem]
+    after:bg-op-primary after:mt-4 after:mb-20;
+}
+
+.list {
+    @apply xl:flex xl:flex-wrap xl:justify-between;
+}
+
+.sentence {
+    @apply text-primary mb-20 last:mb-0 
+    xl:w-[49.25%] xl:last:w-full;
+}
+
+.sentence:last-child .supptitle {
+    @apply after:hidden;
+}
+
+.date {
+    @apply p-2 px-4 rounded-xl text-primary 
+    border-[0.05rem] border-op-primary flex max-w-max
+    font-light capitalize mb-12;
+}
+
+.text {
+    @apply text-3xl md:text-5xl xl:text-6xl mb-4;
+}
+
+.icon {
+    @apply absolute top-0 right-0;
+}
+
+.supptitle {
+    @apply leading-9 font-light text-xl after:content-[''] 
+    after:block after:w-full after:h-[0.05rem]
+  after:bg-primary after:mt-10;
+}
+
+.desc {
+    @apply block 4sm:w-10/12 md:w-1/2;
+}

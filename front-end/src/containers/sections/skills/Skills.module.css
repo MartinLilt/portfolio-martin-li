@@ -1,0 +1,52 @@
+.section {
+    @apply pb-40;
+}
+
+.title {
+    @apply uppercase text-primary text-3xl font-light 
+    after:content-[''] after:block after:w-full 
+    after:h-[0.05rem] after:bg-op-primary 
+    after:mt-4 after:mb-20;
+}
+
+.list {
+    @apply xl:flex xl:flex-wrap xl:justify-between;
+}
+
+.sentence {
+    @apply mb-20 last:mb-0 xl:w-x1/2 
+    xl:odd:mb-0 xl:first:!mb-20 border-[0.05rem] border-primary rounded-xl p-4;
+}
+
+.experience {
+    @apply font-light text-primary pb-4;
+}
+
+.content {
+    @apply flex items-center justify-between 
+    p-4 md:px-8 rounded-xl text-primary mb-12 relative
+    border-[0.05rem] border-op-primary;
+}
+
+.progressbar {
+    @apply block h-[64px] bg-accent rounded-xl 
+    absolute top-[4px] left-[4px] opacity-70;
+}
+
+.progress {
+    @apply translate-y-[0.05rem];
+}
+
+.text {
+    @apply text-3xl md:text-5xl xl:text-6xl mb-4;
+}
+
+.taglist {
+    @apply flex flex-wrap translate-x-[-0.25rem];
+}
+
+.tagsentence {
+    @apply p-2 px-4 rounded-xl text-primary 
+    border-[0.05rem] border-op-primary flex max-w-max 
+    font-light capitalize m-1;
+}

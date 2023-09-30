@@ -1,0 +1,30 @@
+.section {
+    @apply pt-40 pb-20 md:pt-72;
+}
+
+.container {
+    @apply 2md:flex 2md:items-center;
+}
+
+.list {
+    @apply flex flex-wrap items-center mb-10 mr-auto 2md:mb-0;
+}
+
+.sentence {
+    @apply text-primary flex items-center first:mb-5 
+    select-none 4sm:first:mb-0 md:first:mb-0;
+}
+
+.text {
+    @apply mr-4 text-8xl;
+}
+
+.desc {
+    @apply w-36 font-light;
+}
+
+.button {
+    @apply p-4 px-8 rounded-xl text-secondary 
+    bg-primary border-[0.1rem] border-primary
+    hover:text-primary hover:bg-secondary flex;
+}
