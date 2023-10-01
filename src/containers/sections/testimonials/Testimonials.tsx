@@ -1,21 +1,29 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import s from "./Testimonials.module.css";
 import { CarouselComponent, IconComponent } from "@/components";
+import { useMediaQuery } from "react-responsive";
 
 const Testimonials: FC = () => {
-  const handleToggleCarousel = () => {};
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const isDesktop = useMediaQuery({ query: "(min-width: 1280px)" });
+  const wholeAmountOfCases = isDesktop ? 3 : 6;
+
+  const handleSlide = (direction: number) => {
+    setCurrentIndex(
+      (prevIndex) =>
+        (prevIndex + direction + wholeAmountOfCases) % wholeAmountOfCases
+    );
+  };
 
   return (
     <section data-anchor-testimonials className="pb-40">
       <div className="custom-c">
         <h3 className={s.title}>Testimonials</h3>
-        <div className="flex mb-4">
+        <div className={s.content}>
           <button
             type="button"
-            onClick={handleToggleCarousel}
-            className="p-4 md:px-8 rounded-xl text-primary 
-        bg-secondary border-[0.05rem] border-primary mr-4
-        hover:text-secondary hover:bg-primary flex xl:hidden"
+            onClick={() => handleSlide(-1)}
+            className={s.button}
           >
             <IconComponent
               nameIcon="AiOutlineArrowLeft"
@@ -24,10 +32,8 @@ const Testimonials: FC = () => {
           </button>
           <button
             type="button"
-            onClick={handleToggleCarousel}
-            className="p-4 md:px-8 rounded-xl text-primary 
-        bg-secondary border-[0.05rem] border-primary 
-        hover:text-secondary hover:bg-primary flex xl:hidden"
+            onClick={() => handleSlide(1)}
+            className={s.button}
           >
             <IconComponent
               nameIcon="AiOutlineArrowRight"
@@ -35,49 +41,86 @@ const Testimonials: FC = () => {
             />
           </button>
         </div>
-        <ul className="text-primary">
-          {[
-            {
-              id: 1,
-              customerName: "Leonard Heiser",
-              customerFrom: "Envato customer",
-              img: { url: "/avatar.jpg", alt: "Testimonials avatar" },
-              desc: `We have purchased well into the thousands of items, 
-              but this is without doubt one of the best we’ve have been 
-              lucky enough to work on, the attention to detail apparent 
-              throughout, and the delivery is impressively intuitive.`,
-              ranked: 5,
-            },
-            {
-              id: 2,
-              customerName: "Leonard Heiser",
-              customerFrom: "Envato customer",
-              img: { url: "/avatar.jpg", alt: "Testimonials avatar" },
-              desc: `We have purchased well into the thousands of items, 
-              but this is without doubt one of the best we’ve have been 
-              lucky enough to work on, the attention to detail apparent 
-              throughout, and the delivery is impressively intuitive.`,
-              ranked: 5,
-            },
-            {
-              id: 3,
-              customerName: "Leonard Heiser",
-              customerFrom: "Envato customer",
-              img: { url: "/avatar.jpg", alt: "Testimonials avatar" },
-              desc: `We have purchased well into the thousands of items, 
-              but this is without doubt one of the best we’ve have been 
-              lucky enough to work on, the attention to detail apparent 
-              throughout, and the delivery is impressively intuitive.`,
-              ranked: 5,
-            },
-          ].map((item, index) => (
-            <CarouselComponent key={index} {...item} />
-          ))}
-        </ul>
+        <div className="relative overflow-hidden w-full">
+          <ul
+            className={s.list}
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
+            {[
+              {
+                id: 1,
+                customerName: "Leonard Heiser",
+                customerFrom: "Envato customer",
+                img: { url: "/avatar.jpg", alt: "Testimonials avatar" },
+                desc: `We have purchased well into the thousands of items, 
+  but this is without doubt one of the best we’ve have been 
+  lucky enough to work on, the attention to detail apparent 
+  throughout, and the delivery is impressively intuitive.`,
+                ranked: 5,
+              },
+              {
+                id: 2,
+                customerName: "Leonard 2",
+                customerFrom: "Envato customer",
+                img: { url: "/avatar.jpg", alt: "Testimonials avatar" },
+                desc: `We have purchased well into the thousands of items, 
+  but this is without doubt one of the best we’ve have been 
+  lucky enough to work on, the attention to detail apparent 
+  throughout, and the delivery is impressively intuitive.`,
+                ranked: 5,
+              },
+              {
+                id: 3,
+                customerName: "Leonard 3",
+                customerFrom: "Envato customer",
+                img: { url: "/avatar.jpg", alt: "Testimonials avatar" },
+                desc: `We have purchased well into the thousands of items, 
+  but this is without doubt one of the best we’ve have been 
+  lucky enough to work on, the attention to detail apparent 
+  throughout, and the delivery is impressively intuitive.`,
+                ranked: 4,
+              },
+              {
+                id: 4,
+                customerName: "Leonard 4",
+                customerFrom: "Envato customer",
+                img: { url: "/avatar.jpg", alt: "Testimonials avatar" },
+                desc: `We have purchased well into the thousands of items, 
+  but this is without doubt one of the best we’ve have been 
+  lucky enough to work on, the attention to detail apparent 
+  throughout, and the delivery is impressively intuitive.`,
+                ranked: 5,
+              },
+              {
+                id: 5,
+                customerName: "Leonard 5",
+                customerFrom: "Envato customer",
+                img: { url: "/avatar.jpg", alt: "Testimonials avatar" },
+                desc: `We have purchased well into the thousands of items, 
+  but this is without doubt one of the best we’ve have been 
+  lucky enough to work on, the attention to detail apparent 
+  throughout, and the delivery is impressively intuitive.`,
+                ranked: 5,
+              },
+              {
+                id: 6,
+                customerName: "Leonard 6",
+                customerFrom: "Envato customer",
+                img: { url: "/avatar.jpg", alt: "Testimonials avatar" },
+                desc: `We have purchased well into the thousands of items, 
+  but this is without doubt one of the best we’ve have been 
+  lucky enough to work on, the attention to detail apparent 
+  throughout, and the delivery is impressively intuitive.`,
+                ranked: 3,
+              },
+            ].map((item, index) => (
+              <CarouselComponent key={index} {...item} />
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );
 };
 
 export default Testimonials;
- 

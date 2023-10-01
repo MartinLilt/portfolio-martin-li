@@ -1,9 +1,8 @@
 import { FC } from "react";
-import s from "./Carousel.module.scss";
+import s from "./Carousel.module.css";
 import Image from "next/image";
 import { DescEditorComponent, RankedComponent } from "..";
 import { ICarousel } from "./carousel.interface";
-import { motion, AnimatePresence } from "framer-motion";
 
 const CarouselTemplate: FC<ICarousel> = ({
   customerFrom,
@@ -13,37 +12,27 @@ const CarouselTemplate: FC<ICarousel> = ({
   img: { url, alt },
 }) => {
   return (
-    <AnimatePresence>
-      <motion.li
-        initial={{ opacity: 0, y: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        className="border-[0.05rem] border-primary rounded-xl p-4 pb-12 hidden first:block"
-      >
-        <span className="block font-light mb-4">{`${customerFrom}:`}</span>
-        <div className="flex mb-4">
-          <Image
-            src={url}
-            alt={alt}
-            width={98}
-            height={98}
-            draggable={false}
-            className="rounded-xl mr-4"
-          />
-          <span>
-            <p
-              className="p-2 px-4 rounded-xl 
-                    border-[0.05rem] border-op-primary flex max-w-max 
-                    font-light mb-4"
-            >
-              {customerName}
-            </p>
-            <RankedComponent rankedValue={ranked} />
-          </span>
-        </div>
-        <span className="block md:w-[95%]"><DescEditorComponent description={desc} /></span>
-      </motion.li>
-    </AnimatePresence>
+    <li className={s.sentence}>
+      <span className={s.client}>{`${customerFrom}:`}</span>
+      <div className={s.content}>
+        <Image
+          src={url}
+          alt={alt}
+          width={98}
+          height={98}
+          draggable={false}
+          className={s.image}
+        />
+        <span>
+          <p className={s.name}>{customerName}</p>
+          <RankedComponent rankedValue={ranked} />
+          <span className="block mt-2 font-light">{`(${ranked}/5)`}</span>
+        </span>
+      </div>
+      <span className={s.desc}>
+        <DescEditorComponent description={desc} />
+      </span>
+    </li>
   );
 };
 
