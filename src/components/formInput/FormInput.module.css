@@ -1,0 +1,22 @@
+.content {
+  @apply text-primary;
+}
+
+.content input {
+  @apply mb-4 outline-none;
+}
+
+.content textarea {
+    @apply mb-12 h-40 outline-none;
+  }
+
+.content input::placeholder,
+.content textarea::placeholder {
+  @apply font-light capitalize text-primary;
+}
+
+.content input,
+.content textarea {
+  @apply border-[0.05rem] border-op-primary bg-transparent
+    rounded-xl w-full p-4 focus:border-primary;
+}
