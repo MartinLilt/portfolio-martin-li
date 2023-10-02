@@ -3,3 +3,37 @@
     after:content-[''] after:block after:w-full after:h-[0.05rem]
     after:bg-op-primary after:mt-4 after:mb-20;
 }
+
+.action {
+    @apply mr-2;
+}
+
+.text {
+    @apply leading-[50px] xl:leading-[80px] 
+    text-3xl md:text-5xl xl:text-6xl mb-4
+    text-primary mt-12;
+}
+
+.desc {
+    @apply leading-9 font-light text-xl mb-4 text-primary;
+}
+
+.list {
+    @apply flex flex-wrap translate-x-[-0.25rem]
+    after:content-[''] after:block after:w-full after:h-[0.05rem]
+    after:bg-primary after:mt-9 after:mb-20;
+}
+
+.sentence {
+    @apply border-[0.05rem] border-op-primary rounded-xl w-min
+    m-1 cursor-pointer text-primary hover:text-secondary
+    hover:bg-primary hover:scale-125 hover:drop-shadow-2xl;
+}
+
+.link {
+    @apply p-4 block;
+}
+
+.call {
+    @apply block font-light mb-4 text-primary;
+}

@@ -4,6 +4,9 @@ import LocalTimeComponent from './localTime/LocalTime'
 import RankedComponent from "./ranked/Ranked";
 import DescEditorComponent from "./descEditor/DescEditor";
 import CarouselComponent from "./carousel/Carousel";
+import FormInputComponent from "./formInput/FormInput";
+import ButtonComponent from "./button/Button";
+import FormComponent from "./form/Form";
 
 export {
     LogoComponent,
@@ -11,5 +14,8 @@ export {
     LocalTimeComponent,
     RankedComponent,
     DescEditorComponent,
-    CarouselComponent
+    CarouselComponent,
+    FormInputComponent,
+    ButtonComponent,
+    FormComponent
 }
