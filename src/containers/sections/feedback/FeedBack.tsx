@@ -13,10 +13,10 @@ const FeedBack: FC = () => {
           <span className={s.action}>Get in touch</span>
           <IconComponent nameIcon={"MdOutgoingMail"} propsIcon={{ size: 25 }} />
         </ButtonComponent>
-        <p className={s.text}>Let's make your brand brilliant!</p>
+        <p className={s.text}>Let&rsquo;s make your brand brilliant!</p>
         <p className={s.desc}>
-          If you would like to work with us or just want to get in touch, we’d
-          love to hear from you!
+          If you would like to work with us or just want to get in touch,
+          we&rsquo;d love to hear from you!
         </p>
         <ul className={s.list}>
           {[
