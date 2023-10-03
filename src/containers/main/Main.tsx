@@ -1,6 +1,6 @@
 import { FC, ReactNode } from "react";
 import { FooterContainer, HeaderContainer } from "..";
-import s from './Main.module.css'
+import s from "./Main.module.css";
 
 const Main: FC<{ children: ReactNode }> = ({ children }) => {
   return (

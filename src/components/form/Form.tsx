@@ -27,7 +27,7 @@ const Form: FC = () => {
         renderTag="textarea"
       />
       <ButtonComponent buttonTitle={""} buttonType="submit">
-        Get in touch
+        Submit
       </ButtonComponent>
     </form>
   );

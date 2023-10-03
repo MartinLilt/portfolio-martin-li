@@ -15,13 +15,14 @@
 }
 
 .desc {
-    @apply leading-9 font-light text-xl mb-4 text-primary;
+    @apply leading-9 font-light text-xl mb-8 text-primary;
 }
 
 .list {
     @apply flex flex-wrap translate-x-[-0.25rem]
     after:content-[''] after:block after:w-full after:h-[0.05rem]
-    after:bg-primary after:mt-9 after:mb-20;
+    after:bg-primary after:mt-9 after:mb-20 after:translate-x-1
+    xl:after:hidden;
 }
 
 .sentence {

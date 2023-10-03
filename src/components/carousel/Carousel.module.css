@@ -1,7 +1,7 @@
 .sentence {
   @apply p-4 pb-12 relative before:content-[''] before:block 
   before:w-[99%] before:h-full before:absolute before:top-0 
-  before:left-[0.05rem] before:border-[0.05rem] before:border-primary
+  before:left-[0.05rem] before:border-[0.05rem] before:border-op-primary
   before:rounded-xl;
 
   flex: 0 0 100%;

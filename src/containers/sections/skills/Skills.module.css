@@ -15,7 +15,7 @@
 
 .sentence {
     @apply mb-20 last:mb-0 xl:w-x1/2 
-    xl:odd:mb-0 xl:first:!mb-20 border-[0.05rem] border-primary rounded-xl p-4;
+    xl:odd:mb-0 xl:first:!mb-20 border-[0.05rem] border-op-primary rounded-xl p-4;
 }
 
 .experience {
