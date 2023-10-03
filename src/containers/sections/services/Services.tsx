@@ -1,88 +1,79 @@
-import Link from "next/link";
 import { FC } from "react";
-import s from './Service.module.css'
+import s from "./Service.module.css";
+import Link from "next/link";
+import { SectionTemplComponent } from "@/components";
 
-const Services: FC = () => {
+const Service: FC = () => {
   return (
-    <section data-anchor-services className={s.section}>
-      <div className="custom-c">
-        <h3
-          className={s.title}
-        >
-          Services
-        </h3>
-        <ul className={s.list}>
-          {[
-            {
-              preview: "B2B",
-              title: "Web product development",
-              desc: "Website development for you bisness to bisnee approach.",
-              tags: ["Web design", "Web development", "CMS system"],
-              isPopular: false,
-              productUrl: '/service/business-to-business',
+    <SectionTemplComponent title="Service" styles="pb-40" sectionId="service">
+      <ul className={s.list}>
+        {[
+          {
+            title: "What is Business to Business?",
+            link: {
+              href: "/service/business-to-business",
+              alt: "b2b service",
             },
-            {
-              preview: "B2C",
-              title: "Web product development",
-              desc: "Website development for you bisness to bisnee approach.",
-              tags: ["Web design", "Web development", "CMS system"],
-              isPopular: false,
-              productUrl: '/service/business-to-client',
+            desc: "Modern and mobile-ready website that will help you reach all of your marketing.",
+            taglist: ["b2b", "UX / UI design", "web development"],
+          },
+          {
+            title: "What is Business to Client?",
+            link: {
+              href: "/service/business-to-client",
+              alt: "b2c service",
             },
-            {
-              preview: "DEV",
-              title: "Web product development",
-              desc: "Website development for you bisness to bisnee approach.",
-              tags: ["Web design", "Web development", "CMS system"],
-              isPopular: true,
-              productUrl: '/service/custom-development',
+            desc: "Modern and mobile-ready website that will help you reach all of your marketing.",
+            taglist: ["b2c", "UX / UI design", "web development"],
+          },
+          {
+            title: "What is Mobile to Client?",
+            link: {
+              href: "/service/mobile-development",
+              alt: "mobile development service",
             },
-          ].map(({ preview, title, desc, tags, isPopular, productUrl }, index) => {
-            return (
-              <li
-                key={index}
-                title={`Click to open "${title}" case..`}
-                className={s.sentence}
-              >
-                <Link href={productUrl} className={s.link}>
-                  <span className={s.product}>Product name:</span>
-                  <span
-                    className={s.preview}
-                    style={{ marginBottom: isPopular ? "1.5rem" : "3.5rem" }}
-                  >
-                    {preview}
-                  </span>
-                  {isPopular && (
-                    <span
-                      className={s.popular}
-                    >
-                      Popular product*
-                    </span>
-                  )}
-                  <h4 className={s.text}>
-                    {title}
-                  </h4>
-                  <p className={s.desc}>{desc}</p>
+            desc: "Modern and mobile-ready website that will help you reach all of your marketing.",
+            taglist: ["mobile", "UX / UI design", "web development"],
+          },
+        ].map(({ title, link: { href, alt }, desc, taglist }, index) => {
+          return (
+            <li
+              key={index}
+              title={`Click to open ${alt} case..`}
+              className={s.sentence}
+            >
+              <Link href={href} className={s.link}>
+                <div className={s.canvas}></div>
+                <div className={s.content}>
+                  <span className={s.case}>{`Service case (${
+                    index + 1
+                  }/3)`}</span>
+                  <div className={s.box}>
+                    <h4 className={s.text}>{title}</h4>
+                    <p className={s.desc}>{desc}</p>
+                  </div>
                   <ul className={s.taglist}>
-                    {tags?.map((item, index) => {
-                      return (
-                        <li
-                          key={index}
-                          className={s.tagsentence}
-                        >
-                          {item}
-                        </li>
-                      );
-                    })}
+                    {taglist?.map((item, index) => (
+                      <li key={index} className={s.tagsentence}>
+                        {item}
+                      </li>
+                    ))}
                   </ul>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-    </section>
+                </div>
+              </Link>
+              <ul className={s.tablist}>
+                {taglist?.map((item, index) => (
+                  <li key={index} className={s.tagsentence}>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </li>
+          );
+        })}
+      </ul>
+    </SectionTemplComponent>
   );
 };
 
-export default Services;
+export default Service;

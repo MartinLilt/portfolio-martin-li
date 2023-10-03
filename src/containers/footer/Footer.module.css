@@ -1,0 +1,8 @@
+.section {
+    @apply py-10;
+}
+
+.copy {
+    @apply text-sm leading-7 font-light text-primary
+    text-center md:text-left;
+}

@@ -2,12 +2,12 @@ import { FC, useEffect, useRef } from "react";
 import s from "./LocalTime.module.css";
 
 const LocalTIme: FC = () => {
-    const currentTimeRef = useRef<HTMLSpanElement | null>(null);
+  const currentTimeRef = useRef<HTMLSpanElement | null>(null);
   const intervalIdRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const updateTime = () => {
-      if (currentTimeRef.current) {
+      if (currentTimeRef.current && currentTimeRef.current) {
         currentTimeRef.current.textContent = `Local time: ${new Date().toLocaleTimeString(
           "en-US",
           {
@@ -28,7 +28,7 @@ const LocalTIme: FC = () => {
       }
     };
   }, []);
-  
+
   return (
     <span className={s.time}>
       <span className="absolute" ref={currentTimeRef}>

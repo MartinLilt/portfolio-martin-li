@@ -3,17 +3,18 @@ import { IconComponent, LogoComponent } from "@/components";
 import s from './Header.module.css'
 
 const Header: FC = () => {
+  
   return (
     <header className={s.section}>
       <LogoComponent logoSize={24} />
       <nav className={s.nav}>
         <ul className={s.list}>
           {[
-            { anchor: "#home", page: "Home" },
-            { anchor: "#about", page: "About" },
-            { anchor: "#service", page: "Services" },
-            { anchor: "#testimonials", page: "Testimonials" },
-            { anchor: "#contact", page: "Contacts" },
+            { anchor: "home", page: "Home" },
+            { anchor: "about", page: "About" },
+            { anchor: "service", page: "Services" },
+            { anchor: "testimonials", page: "Testimonials" },
+            { anchor: "feedback", page: "Contacts" },
           ].map((item, index) => {
             return (
               <li

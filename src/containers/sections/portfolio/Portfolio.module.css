@@ -8,8 +8,23 @@
     after:bg-op-primary after:mt-4 after:mb-20;
 }
 
+.overlay {
+  @apply block w-full h-full z-10 bg-secondary
+  rounded-xl top-0 left-0 absolute translate-y-[-100%]
+  text-primary p-5;
+}
+
+.suptitle {
+  @apply text-3xl md:text-5xl xl:text-6xl 
+  mb-4 leading-normal;
+}
+
+.desc {
+  @apply font-light text-xl leading-9;
+}
+
 .sentence {
-  @apply mb-20 last:mb-0 xl:w-x1/2;
+  @apply mb-20 last:mb-0 xl:w-x1/2 overflow-hidden;
 }
 
 .sentence:last-child ul {
@@ -20,8 +35,32 @@
   @apply xl:after:hidden;
 }
 
+.sentence a {
+  @apply block;
+}
+
+.sentence:hover a {
+  @apply relative;
+}
+
+.sentence:hover a > .content .overlay {
+  @apply translate-y-0;
+  transition: all 0.5s ease-in-out;
+}
+
+.sentence:hover a > .content {
+  @apply border-accent;
+  transition: all 0.5s ease-in-out;
+}
+
+
+.sentence:hover a > .taglist {
+  @apply after:bg-accent;
+}
+
 .content {
-  @apply relative block h-[400px] mb-12;
+  @apply relative block h-[400px] mb-12 
+  border-[0.05rem] border-transparent rounded-xl;
 }
 
 .image {
@@ -30,12 +69,13 @@
 
 .text {
   @apply text-primary text-3xl 
-    md:text-5xl xl:text-6xl mb-4 leading-[50px] xl:leading-[80px];
+  md:text-5xl xl:text-6xl mb-4 leading-normal;
 }
 
 .taglist {
   @apply text-primary flex flex-wrap translate-x-[-0.25rem] 
-    after:content-[''] after:block after:w-full after:h-[0.05rem] after:bg-primary after:mt-9;
+  after:content-[''] after:block after:w-full after:h-[0.05rem]
+after:bg-primary after:mt-9 after:translate-x-[0.25rem];
 }
 
 .tagsentence {

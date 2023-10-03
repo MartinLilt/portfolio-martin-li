@@ -12,11 +12,11 @@
 
 .content input::placeholder,
 .content textarea::placeholder {
-  @apply font-light capitalize text-primary;
+  @apply font-light capitalize text-op-primary translate-x-2;
 }
 
 .content input,
 .content textarea {
   @apply border-[0.05rem] border-op-primary bg-transparent
-    rounded-xl w-full p-4 focus:border-primary;
+    rounded-xl w-full p-4 focus:border-accent;
 }

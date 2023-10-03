@@ -1,7 +1,14 @@
-import { FC } from 'react';
+import { FC } from "react";
+import s from './Footer.module.css'
 
 const Footer: FC = () => {
-  return <footer><p>&copy; 2023 Your Website Name. All Rights Reserved.</p></footer>
+  return (
+    <footer className={s.section}>
+      <div className="custom-c">
+        <p className={s.copy}>&copy; 2023-2024 Martin.Li website portfolio | All Rights Reserved.</p>
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;

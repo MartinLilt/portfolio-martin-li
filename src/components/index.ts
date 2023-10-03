@@ -7,6 +7,7 @@ import CarouselComponent from "./carousel/Carousel";
 import FormInputComponent from "./formInput/FormInput";
 import ButtonComponent from "./button/Button";
 import FormComponent from "./form/Form";
+import SectionTemplComponent from "./sectionTempl/SectionTempl";
 
 export {
     LogoComponent,
@@ -17,5 +18,6 @@ export {
     CarouselComponent,
     FormInputComponent,
     ButtonComponent,
-    FormComponent
+    FormComponent,
+    SectionTemplComponent
 }
