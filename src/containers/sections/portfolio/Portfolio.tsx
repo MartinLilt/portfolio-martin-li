@@ -73,7 +73,7 @@ const Portfolio: FC = () => {
                         <span className="font-light block mb-4">
                           Click to see..
                         </span>
-                        <span className="4sm:w-4/5 block">
+                        <span className="4sm:w-4/5 xl:w-[90%] block">
                           <p className={s.suptitle}>{suptitle}</p>
                           <p className={s.desc}>{desc}</p>
                         </span>

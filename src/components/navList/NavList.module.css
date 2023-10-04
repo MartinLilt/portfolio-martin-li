@@ -1,0 +1,21 @@
+.nav {
+  @apply xl:h-[58px] xl:w-[35%];
+}
+
+.list {
+  @apply xl:flex xl:justify-between xl:items-center xl:h-full;
+}
+
+.sentence {
+  @apply border-wrap mb-4 last:mb-0 first:hidden xl:first:block
+   cursor-pointer xl:flex xl:justify-between 
+  xl:items-center xl:h-full xl:mb-0 hover:border-accent;
+}
+
+.anchor-text {
+  @apply title mb-4 last:mb-0 xl:mb-0 xl:up-text;
+}
+
+.anchor-desc {
+  @apply text xl:hidden;
+}

@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+const plugin = require('tailwindcss/plugin')
 
 const config: Config = {
   content: [
@@ -41,9 +42,68 @@ const config: Config = {
         'x1/2': '49.5%',
         '2x1/2': '49.25%',
         '3x2/2': 'calc(100% / 2 - 1.5rem)',
+      },
+
+      height: {
+        '3x2/2': 'calc(100% - 73px)',
       }
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addComponents }: { addComponents: Function }) {
+      addComponents({
+        '.title': {
+          color: '#fff',
+          lineHeight: 'normal',
+          fontSize: '1.875rem',
+          fontWeight: '400',
+          '@media (min-width: 768px)': {
+            fontSize: '3rem',
+          },
+          '@media (min-width: 1280px)': {
+            fontSize: '3.75rem',
+          }
+        },
+        '.text': {
+          color: '#fff',
+          lineHeight: '2.25rem',
+          fontSize: '1.25rem',
+          fontWeight: '300',
+        },
+        '.desc': {
+          color: '#fff',
+          lineHeight: 'normal',
+          fontSize: '1rem',
+          fontWeight: '300',
+        },
+        '.up-title': {
+          color: '#fff',
+          lineHeight: '2.25rem',
+          fontSize: '1.875rem',
+          fontWeight: '300',
+          textTransform: 'uppercase',
+        },
+        '.up-text': {
+          color: '#fff',
+          lineHeight: '1.25rem',
+          fontSize: '0.875rem',
+          fontWeight: '300',
+          textTransform: 'uppercase',
+        },
+        '.up-desc': {
+          color: '#fff',
+          lineHeight: '2.25rem',
+          fontSize: '1.25rem',
+          fontWeight: '300',
+          textTransform: 'uppercase',
+        },
+        '.border-wrap': {
+          border: '0.05rem solid #ffffff5c',
+          borderRadius: '0.75rem',
+          padding: '1rem',
+        }
+      });
+    }),
+  ],
 }
-export default config
+export default config;

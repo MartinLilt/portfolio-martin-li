@@ -8,6 +8,9 @@ import FormInputComponent from "./formInput/FormInput";
 import ButtonComponent from "./button/Button";
 import FormComponent from "./form/Form";
 import SectionTemplComponent from "./sectionTempl/SectionTempl";
+import ModalMobileComponent from "./modalTempl/ModalMobile";
+import SocialListComponent from "./socialList/SocialList";
+import NavListComponent from "./navList/NavList";
 
 export {
     LogoComponent,
@@ -19,5 +22,8 @@ export {
     FormInputComponent,
     ButtonComponent,
     FormComponent,
-    SectionTemplComponent
+    SectionTemplComponent,
+    ModalMobileComponent,
+    SocialListComponent,
+    NavListComponent
 }

@@ -1,6 +1,11 @@
 import { FC } from "react";
-import s from './FeedBack.module.css';
-import { ButtonComponent, FormComponent, IconComponent } from "@/components";
+import s from "./FeedBack.module.css";
+import {
+  ButtonComponent,
+  FormComponent,
+  IconComponent,
+  SocialListComponent,
+} from "@/components";
 
 const FeedBack: FC = () => {
   const handleSendEmail = () => {};
@@ -25,8 +30,8 @@ const FeedBack: FC = () => {
                 we&rsquo;d love to hear from you!
               </p>
             </div>
-            <ul className={s.list}>
-              {[
+            <SocialListComponent
+              options={[
                 {
                   link: {
                     href: "https://www.linkedin.com/in/martin-liminovic-44046b21a/",
@@ -63,24 +68,10 @@ const FeedBack: FC = () => {
                   },
                   icon: "TbBrandFiverr",
                 },
-              ].map(({ link: { href, alt }, icon }, index) => {
-                return (
-                  <li key={index} className={s.sentence}>
-                    <a
-                      href={href}
-                      title={`Click to open my ${alt}..`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={s.link}
-                    >
-                      <IconComponent nameIcon={icon} propsIcon={{ size: 25 }} />
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
+              ]}
+            />
           </div>
-          <div className="xl:w-x1/2">
+          <div className="xl:w-x1/2 mt-12">
             <span className={s.call}>Feedback form:</span>
             <FormComponent />
           </div>
