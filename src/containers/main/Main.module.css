@@ -1,4 +1,9 @@
+.content {
+  @apply xl:!translate-x-0;
+  transition: all 0.5s ease-in-out;
+}
+
 .box {
-    @apply border-[0.05rem] border-op-primary 
+  @apply border-[0.05rem] border-op-primary 
     rounded-xl pb-20 m-4 mb-0;
 }

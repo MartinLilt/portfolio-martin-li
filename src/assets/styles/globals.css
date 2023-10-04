@@ -6,7 +6,8 @@
 
 
 body {
-  @apply bg-secondary text-base box-border relative;
+  @apply bg-secondary text-base box-border relative overflow-x-hidden
+  xl:!overflow-y-auto text-primary;
   font-family: 'Sora', sans-serif;
 }
 

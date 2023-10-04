@@ -17,15 +17,23 @@ const Form: FC = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={s.content}>
-      <FormInputComponent name="name" label="name" control={control} />
-      <FormInputComponent name="email" label="email" control={control} />
-      <FormInputComponent name="subject" label="subject" control={control} />
-      <FormInputComponent
-        name="description"
-        label="description"
-        control={control}
-        renderTag="textarea"
-      />
+      {[
+        { name: "name", label: "Name", renderTag: "input" },
+        { name: "email", label: "Email", renderTag: "input" },
+        { name: "subject", label: "Subject", renderTag: "input" },
+        { name: "description", label: "Description", renderTag: "textarea" },
+      ].map(({ name, label, renderTag }, index) => {
+        return (
+          <FormInputComponent
+            key={index}
+            name={name}
+            label={label}
+            control={control}
+            renderTag={renderTag}
+          />
+        );
+      })}
+
       <ButtonComponent buttonTitle={""} buttonType="submit">
         Submit
       </ButtonComponent>
@@ -34,3 +42,4 @@ const Form: FC = () => {
 };
 
 export default Form;
+

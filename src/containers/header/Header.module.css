@@ -1,5 +1,5 @@
 .section {
-    @apply px-4 flex justify-between items-center mt-4;
+    @apply px-4 flex justify-between items-center pt-4;
 }
 
 .nav {

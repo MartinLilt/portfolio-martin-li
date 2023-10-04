@@ -1,33 +1,29 @@
 import { FC } from "react";
-import { IconComponent, LogoComponent } from "@/components";
-import s from './Header.module.css'
+import { IconComponent, LogoComponent, NavListComponent } from "@/components";
+import s from "./Header.module.css";
+import { useModal } from "@/hooks";
+import { ModalEnums } from "@/providers";
 
 const Header: FC = () => {
-  
+  const { toggleModal } = useModal();
+
   return (
     <header className={s.section}>
       <LogoComponent logoSize={24} />
-      <nav className={s.nav}>
-        <ul className={s.list}>
-          {[
-            { anchor: "home", page: "Home" },
-            { anchor: "about", page: "About" },
-            { anchor: "service", page: "Services" },
-            { anchor: "testimonials", page: "Testimonials" },
-            { anchor: "feedback", page: "Contacts" },
-          ].map((item, index) => {
-            return (
-              <li
-                key={index}
-                title={`Click to move from ${item.anchor} section.`}
-                className={s.sentence}
-              >
-                {item.page}
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
+      <NavListComponent
+        navListStyles="hidden xl:block"
+        options={[
+          { anchor: "home", anchorText: "Home", anchorDesc: "" },
+          { anchor: "about", anchorText: "About", anchorDesc: "" },
+          { anchor: "service", anchorText: "Services", anchorDesc: "" },
+          {
+            anchor: "testimonials",
+            anchorText: "Testimonials",
+            anchorDesc: "",
+          },
+          { anchor: "feedback", anchorText: "Contacts", anchorDesc: "" },
+        ]}
+      />
       <div className="flex">
         <a
           href="mailto:question@limihub.info"
@@ -42,8 +38,9 @@ const Header: FC = () => {
         <button
           type="button"
           className={s.button}
+          onClick={() => toggleModal(ModalEnums.mobileMenu)}
         >
-          <IconComponent nameIcon={"VscMenu"} propsIcon={{ size: 25 }} />
+          <IconComponent nameIcon={"FiMenu"} propsIcon={{ size: 25 }} />
         </button>
       </div>
     </header>

@@ -1,0 +1,23 @@
+.title {
+  @apply uppercase text-primary text-3xl font-light mt-8
+    after:content-[''] after:block after:w-full after:h-[0.05rem]
+    after:bg-op-primary after:mt-4 after:mb-14 4sm:after:mb-20;
+}
+
+.overlay {
+  @apply w-full h-[100vh] fixed top-0 left-full p-4;
+  transition: all 0.5s ease-in-out;
+}
+
+.content {
+  @apply border-[0.05rem] border-op-primary rounded-xl
+    p-4 h-3x2/2 overflow-y-scroll;
+}
+
+.box {
+  @apply flex justify-between mb-4 items-center;
+}
+
+.box > ul > li:nth-child(-n + 3) {
+  @apply hidden 4sm:block;
+}
