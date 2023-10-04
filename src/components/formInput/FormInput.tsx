@@ -27,4 +27,6 @@ const FormInput = forwardRef<HTMLInputElement, IFormGroupProps>(
   }
 );
 
+FormInput.displayName = 'FormInput';
+
 export default FormInput;
