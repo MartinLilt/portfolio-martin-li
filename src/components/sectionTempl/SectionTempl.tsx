@@ -11,7 +11,8 @@ const SectionTempl: FC<ISectionTemplProps> = ({
 }) => {
   const Section = sectionType || "section";
   return (
-    <Section className={`${styles}`} id={sectionId}>
+    <Section className={`${styles}`}>
+      <div id={sectionId} className="-translate-y-12" />
       <div className="custom-c">
         <h3 className={s.title}>{title}</h3>
         {children}

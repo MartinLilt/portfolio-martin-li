@@ -6,7 +6,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <BgCanvasProvider>
       <ModalProvider>
-        <Component {...pageProps} />
+        <div className="overflow-hidden"><Component {...pageProps} /></div>
       </ModalProvider>
     </BgCanvasProvider>
   );
