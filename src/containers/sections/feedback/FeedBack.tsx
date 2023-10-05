@@ -11,7 +11,8 @@ const FeedBack: FC = () => {
   const handleSendEmail = () => {};
 
   return (
-    <section id="feedback">
+    <section>
+      <div id="feedback" className="-translate-y-12" />
       <div className="custom-c">
         <h3 className={s.title}>FeedBack</h3>
         <div className="xl:flex xl:justify-between">

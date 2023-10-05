@@ -16,7 +16,8 @@ const Testimonials: FC = () => {
   };
 
   return (
-    <section data-anchor-testimonials className="pb-40">
+    <section className="pb-40">
+      <div id="testimonials" className="-translate-y-12" />
       <div className="custom-c">
         <h3 className={s.title}>Testimonials</h3>
         <div className={s.content}>

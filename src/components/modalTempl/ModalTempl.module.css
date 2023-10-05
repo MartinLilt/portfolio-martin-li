@@ -18,6 +18,3 @@
   @apply flex justify-between mb-4 items-center;
 }
 
-.box > ul > li:nth-child(-n + 3) {
-  @apply hidden 4sm:block;
-}
