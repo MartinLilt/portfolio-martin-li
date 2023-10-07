@@ -1,7 +1,7 @@
 import { FC, ReactNode } from "react";
 import { FooterContainer, HeaderContainer } from "..";
 import s from "./Main.module.css";
-import { ModalMobileComponent, ModalOverlayComponent, ModalScrollComponent } from "@/components";
+import { ModalOverlayComponent, ModalScrollComponent } from "@/components";
 import { useModal } from "@/hooks";
 
 const Main: FC<{ children: ReactNode }> = ({ children }) => {
