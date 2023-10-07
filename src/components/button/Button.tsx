@@ -7,15 +7,19 @@ const Button: FC<IButtin> = ({
   buttonType = "button",
   buttonTitle,
   buttonCustomStyles,
+  buttonNewStyles = s.default,
+  isButtonDisabled,
   onClickEvent,
 }) => {
+
   return (
     <button
       title={buttonTitle}
-      className={s.default}
-      style={buttonCustomStyles}
+      className={`${buttonNewStyles} ${buttonCustomStyles}`}
       type={buttonType}
       onClick={onClickEvent}
+      disabled={isButtonDisabled}
+      style={{ display: isButtonDisabled ? 'none' : 'block'}}
     >
       {children}
     </button>

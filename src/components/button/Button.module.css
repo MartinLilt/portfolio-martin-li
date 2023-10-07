@@ -1,5 +1,5 @@
 .default {
-    @apply p-4 md:px-8 rounded-xl text-primary 
+    @apply p-4 rounded-xl text-primary 
     bg-secondary border-[0.05rem] border-primary 
     hover:text-secondary hover:bg-primary flex;
 }
