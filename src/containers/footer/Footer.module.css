@@ -1,8 +1,17 @@
 .section {
-    @apply py-10;
+    @apply py-20;
 }
 
 .copy {
     @apply text-sm leading-7 font-light text-primary
     text-center md:text-left;
+}
+
+.content {
+    @apply relative;
+}
+
+.icon {
+    @apply border-wrap block w-min cursor-pointer absolute
+     hover:bg-primary hover:text-secondary ml-auto;
 }

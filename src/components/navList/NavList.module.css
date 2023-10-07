@@ -7,8 +7,8 @@
 }
 
 .sentence {
-  @apply border-wrap mb-4 last:mb-0 first:hidden xl:first:block
-   cursor-pointer xl:flex xl:justify-between 
+  @apply border-wrap mb-4 last:mb-0 
+   cursor-pointer xl:flex xl:justify-between xl:border-transparent
   xl:items-center xl:h-full xl:mb-0 hover:border-accent;
 }
 
