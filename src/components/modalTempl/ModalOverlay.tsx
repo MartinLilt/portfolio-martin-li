@@ -11,11 +11,12 @@ import { useModal } from "@/hooks";
 import { ModalEnums } from "@/providers";
 
 const ModalOverlay: FC = () => {
+  const { mobileMenu, cookiesModal } = ModalEnums;
   const { isModalOpen, toggleModal } = useModal();
 
   const modalTitile =
-    (isModalOpen === ModalEnums.mobileMenu && "Menu") ||
-    (isModalOpen === ModalEnums.cookiesModal && "Cookies");
+    (isModalOpen === mobileMenu && "Menu") ||
+    (isModalOpen === cookiesModal && "Cookies");
 
   return (
     <div className={s.overlay}>

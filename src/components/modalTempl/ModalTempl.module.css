@@ -21,3 +21,21 @@
 .like {
   @apply icon-button absolute;
 }
+
+.toast {
+  @apply fixed px-4 w-full z-20 mt-[0.05rem];
+}
+
+.action {
+  @apply border-wrap bg-secondary !border-primary back-shadow;
+}
+
+.success,
+.error {
+  @apply !title mb-4;
+}
+
+.s-text,
+.e-text {
+  @apply text;
+}

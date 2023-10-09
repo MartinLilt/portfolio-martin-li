@@ -1,6 +1,8 @@
 export enum ModalEnums {
   mobileMenu = 'modal/mobileMenu',
   cookiesModal = 'modal/cookies',
+  toastModalSuccess = 'modal/toast-success',
+  toastModalError = 'modal/toast-error',
 }
 
 export enum ModalCookieEnums {

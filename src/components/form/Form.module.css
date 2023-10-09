@@ -1,0 +1,18 @@
+.name,
+.subject,
+.mail,
+.description {
+  @apply input mb-4 outline-none desc focus:border-accent;
+}
+
+.description {
+    @apply h-40;
+}
+
+.button {
+    @apply btn p-hover;
+}
+
+.text-left {
+    @apply desc block mb-12;
+}

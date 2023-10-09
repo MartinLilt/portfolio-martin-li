@@ -4,6 +4,36 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --text-color: #fff;
+  --text-op-color: #ffffff5c;
+  --second-text-color: #000;
+  --second-text-op-color: #0000005c;
+  --accent-text-color: rgb(85, 230, 165);
+
+  --border-color: #fff;
+  --border-op-color: #ffffff5c;
+  --second-border-color: #000;
+  --second-border-op-color: #0000005c;
+  --accent-border-color: rgb(85, 230, 165);
+
+  --bg-color: #fff;
+  --bg-op-color: #ffffff5c;
+  --second-bg-color: #000;
+  --second-bg-op-color: #0000005c;
+  --accent-bg-color: rgb(85, 230, 165);
+
+  --button-color: #fff;
+  --button-op-color: #ffffff5c;
+  --second-button-color: #000;
+  --second-button-op-color: #0000005c;
+  --accent-button-color: rgb(85, 230, 165);
+
+  --shadow-color: #000;
+
+  --border-radius: 0.75rem;
+}
+
 
 body {
   @apply bg-secondary text-base box-border relative overflow-x-hidden

@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { ButtonConstrComponent } from "..";
 import s from "./ModalTempl.module.css";
 import { useModal, useCookies } from "@/hooks";
@@ -7,7 +7,13 @@ import { ModalEnums, ModalCookieEnums, ModalCookieTypes } from "@/providers";
 const ModalScroll: FC = () => {
   const { isModalOpen, toggleModal } = useModal();
   const [isActiveCookieBar, setCookieBar] = useState(true);
-  const { setCookies } = useCookies();
+  const { setCookies, hasCookie } = useCookies();
+
+  useEffect(() => {
+    if (hasCookie) {
+      setCookieBar(false);
+    }
+  }, [hasCookie]);
 
   const handleScrollToLink = (anchor: string) => {
     if (document) {

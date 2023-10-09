@@ -1,6 +1,7 @@
 import { FC } from "react";
 import s from "./Button.module.css";
 import { IButtin } from "./button.interface";
+import cn from 'classnames'
 
 const Button: FC<IButtin> = ({
   children,

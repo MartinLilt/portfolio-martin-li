@@ -7,19 +7,23 @@ import { ButtonConstrComponent, IconComponent } from "..";
 const ModalCookies: FC = () => {
   const { isModalOpen, toggleModal } = useModal();
   const [checkboxState, setCheckboxState] = useState<boolean>(false);
+  const { cookiesModal } = ModalEnums;
+  const { cookieConsentAll, cookieConsentCustom, cookieRejectionAll } =
+    ModalCookieEnums;
   const { setCookies } = useCookies();
 
   const handleToggleButton = (cookieValue: ModalCookieTypes) => {
-    const isCustomCookies = cookieValue === ModalCookieEnums.cookieConsentCustom;
-    if(isCustomCookies) setCookies(`${cookieValue}-performance-${checkboxState}`);
-    if(!isCustomCookies) setCookies(cookieValue);
+    const isCustomCookies = cookieValue === cookieConsentCustom;
+    if (isCustomCookies)
+      setCookies(`${cookieValue}-performance-${checkboxState}`);
+    if (!isCustomCookies) setCookies(cookieValue);
     toggleModal(null);
   };
 
   return (
     <div
       style={{
-        display: isModalOpen !== ModalEnums.cookiesModal ? "none" : "block",
+        display: isModalOpen === cookiesModal ? "block" : "none",
       }}
     >
       <ul className="mb-20">
@@ -111,23 +115,21 @@ const ModalCookies: FC = () => {
             buttonTitle: "",
             buttonCustomStyles: `w-full mb-4 hover:!border-accent 
             hover:!bg-secondary hover:!text-primary text-start`,
-            event: () =>
-              handleToggleButton(ModalCookieEnums.cookieConsentCustom),
+            event: () => handleToggleButton(cookieConsentCustom),
             textContent: "Confirm",
           },
           {
             buttonTitle: "",
             buttonCustomStyles: `w-full mb-4 hover:!border-accent 
             hover:!bg-secondary hover:!text-primary text-start`,
-            event: () =>
-              handleToggleButton(ModalCookieEnums.cookieRejectionAll),
+            event: () => handleToggleButton(cookieRejectionAll),
             textContent: "Reject all",
           },
           {
             buttonTitle: "",
             buttonNewStyles: `w-full text-start border-[0.05rem] border-primary p-4 
             rounded-xl bg-primary text-secondary hover:bg-secondary hover:text-primary`,
-            event: () => handleToggleButton(ModalCookieEnums.cookieConsentAll),
+            event: () => handleToggleButton(cookieConsentAll),
             textContent: "Allow all",
             isButtonDisabled: checkboxState,
           },

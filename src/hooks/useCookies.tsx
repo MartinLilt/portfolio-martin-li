@@ -1,6 +1,5 @@
 import { ModalCookieEnums, ModalCookieTypes } from "@/providers";
-import { setCookie } from 'cookies-next';
-
+import { setCookie, hasCookie } from "cookies-next";
 
 type CustomCookie =
   `${ModalCookieEnums.cookieConsentCustom}-performance-${boolean}`;
@@ -13,7 +12,12 @@ export function useCookies() {
     setCookie("cookieAction", value, { expires: oneYearFromNow });
   };
 
+  const hasCookieValue = () => {
+    return hasCookie("cookieAction");
+  };
+
   return {
     setCookies: setCookieValue,
+    hasCookie: hasCookieValue(),
   };
 }
