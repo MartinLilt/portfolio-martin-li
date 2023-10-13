@@ -49,8 +49,8 @@ const Service: FC = () => {
                     index + 1
                   }/3)`}</span>
                   <div className={s.box}>
-                    <h4 className={s.text}>{title}</h4>
-                    <p className={s.desc}>{desc}</p>
+                    <h4 className={s.name}>{title}</h4>
+                    <p className={s.description}>{desc}</p>
                   </div>
                   <ul className={s.taglist}>
                     {taglist?.map((item, index) => (

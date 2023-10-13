@@ -1,4 +1,4 @@
-import { FC, MouseEventHandler } from "react";
+import { FC } from "react";
 import s from "./NavList.module.css";
 import { INavOptions } from "./navList.interface";
 import { useModal } from "@/hooks";

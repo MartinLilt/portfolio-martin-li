@@ -1,24 +1,26 @@
 .section {
-    @apply px-4 flex justify-between items-center pt-4;
+    @apply px-4 flex justify-between 
+    items-center pt-4;
 }
 
 .nav {
-    @apply hidden w-[55%] h-[58px] xl:w-[35%] xl:block;
+    @apply hidden w-[55%]
+    h-[58px] xl:w-[35%] xl:block;
 }
 
 .list {
-    @apply flex justify-between items-center h-full;
+    @apply flex justify-between 
+    items-center h-full;
 }
 
 .sentence {
     @apply text-primary uppercase text-sm 
-    cursor-pointer flex justify-between items-center h-full;
+    cursor-pointer flex justify-between 
+    items-center h-full;
 }
 
 .link {
-    @apply p-4 md:px-8 rounded-xl text-secondary 
-    bg-primary border-[0.05rem] border-primary 
-    flex mr-4 xl:mr-0 hover:underline;
+    @apply btn mr-4 p-hover w-max xl:mr-0 xl:ml-4 leading-[0.8rem]
 }
 
 .action {
@@ -26,7 +28,5 @@
 }
 
 .button {
-    @apply p-4 rounded-xl text-primary 
-    bg-secondary border-[0.05rem] border-primary 
-    hover:text-secondary hover:bg-primary flex xl:hidden;
+    @apply icon-button h-min xl:hidden;
 }

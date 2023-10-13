@@ -26,10 +26,10 @@ const CarouselTemplate: FC<ICarousel> = ({
         <span>
           <p className={s.name}>{customerName}</p>
           <RankedComponent rankedValue={ranked} />
-          <span className="block mt-2 font-light">{`(${ranked}/5)`}</span>
+          <span className={s.ranked}>{`(${ranked}/5)`}</span>
         </span>
       </div>
-      <span className={s.desc}>
+      <span className={s.description}>
         <DescEditorComponent description={desc} />
       </span>
     </li>

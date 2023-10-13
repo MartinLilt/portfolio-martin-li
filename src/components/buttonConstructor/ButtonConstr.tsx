@@ -7,8 +7,8 @@ const ButtonConstr: FC<IButtonConstructorOptions> = ({ options }) =>
     (
       {
         buttonTitle,
-        buttonCustomStyles,
-        buttonNewStyles,
+        className,
+        styles,
         isButtonDisabled,
         icon,
         event,
@@ -20,15 +20,15 @@ const ButtonConstr: FC<IButtonConstructorOptions> = ({ options }) =>
         <ButtonComponent
           key={index}
           buttonTitle={buttonTitle}
-          buttonCustomStyles={buttonCustomStyles}
-          buttonNewStyles={buttonNewStyles}
+          className={className}
+          styles={styles}
           onClickEvent={event}
           isButtonDisabled={isButtonDisabled}
         >
           {icon ? (
             <IconComponent
               nameIcon={icon.name}
-              propsIcon={{ size: icon.size }}
+              size={icon.size}
             />
           ) : (
             textContent

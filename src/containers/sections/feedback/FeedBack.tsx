@@ -14,14 +14,13 @@ const FeedBack: FC = () => {
     <section>
       <div id="feedback" className="-translate-y-12" />
       <div className="custom-c">
-        <h3 className={s.title}>FeedBack</h3>
-        <div className="xl:flex xl:justify-between">
+        <h3 className={s.feed}>FeedBack</h3>
+        <div className="xl:center xl:!items-start pb-24">
           <div className="xl:w-x1/2">
-            <ButtonComponent onClickEvent={handleSendEmail} buttonTitle={""}>
+            <ButtonComponent onClickEvent={handleSendEmail} buttonTitle={""} className={s.button}>
               <span className={s.action}>Get in touch</span>
               <IconComponent
                 nameIcon={"MdOutgoingMail"}
-                propsIcon={{ size: 25 }}
               />
             </ButtonComponent>
             <div className="max-w-[340px] md:max-w-[600px]">
@@ -72,7 +71,7 @@ const FeedBack: FC = () => {
               ]}
             />
           </div>
-          <div className="xl:w-x1/2 mt-12">
+          <div className="xl:w-x1/2 mt-12 xl:mt-0">
             <span className={s.call}>Feedback form:</span>
             <FormComponent />
           </div>

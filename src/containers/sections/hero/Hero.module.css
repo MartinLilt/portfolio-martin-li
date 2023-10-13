@@ -6,14 +6,12 @@
     @apply md:flex md:justify-center;
 }
 
-.title {
-    @apply text-primary text-3xl md:text-5xl xl:text-6xl 
-    leading-extra-sm select-none md:leading-extra-base xl:leading-extra-lg mb-4;
+.text {
+    @apply title mb-4;
 }
 
 .decoration {
-    @apply relative border-[0.05rem] border-op-primary 
-    rounded-xl px-4 inline-block after:content-['+'] before:content-['+'] 
+    @apply relative border-wrap !py-0 inline-block after:content-['+'] before:content-['+'] 
     after:absolute after:bottom-[-28px] after:right-[-10px] md:after:bottom-[-35px] 
     md:after:right-[-14px] xl:after:right-[-18px] xl:after:bottom-[-42px] 
     before:absolute before:top-[-13px] before:left-[-5px] before:text-xl 

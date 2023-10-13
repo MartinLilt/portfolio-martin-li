@@ -1,28 +1,39 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import s from "./ModalTempl.module.css";
 import { useCookies, useModal } from "@/hooks";
-import { ModalCookieEnums, ModalCookieTypes, ModalEnums } from "@/providers";
+import { ModalCookieEnums, ModalCookieTypes } from "@/providers";
 import { ButtonConstrComponent, IconComponent } from "..";
 
-const ModalCookies: FC = () => {
-  const { isModalOpen, toggleModal } = useModal();
+const ModalCookies: FC<{ display: boolean }> = ({ display }) => {
+  const isDisplay = display ? "block" : "none";
+  const { toggleModal } = useModal();
   const [checkboxState, setCheckboxState] = useState<boolean>(false);
-  const { setCookies } = useCookies();
+  const { cookieConsentAll, cookieConsentCustom, cookieRejectionAll } =
+    ModalCookieEnums;
+  const { setCookies, hasCookie } = useCookies();
 
   const handleToggleButton = (cookieValue: ModalCookieTypes) => {
-    const isCustomCookies = cookieValue === ModalCookieEnums.cookieConsentCustom;
-    if(isCustomCookies) setCookies(`${cookieValue}-performance-${checkboxState}`);
-    if(!isCustomCookies) setCookies(cookieValue);
+    const isCustomCookies = cookieValue === cookieConsentCustom;
+    if (isCustomCookies)
+      setCookies(`${cookieValue}-performance-${checkboxState}`);
+    if (!isCustomCookies) setCookies(cookieValue);
     toggleModal(null);
   };
+
+  useEffect(() => {
+    if (hasCookie && !checkboxState) {
+      setCheckboxState(true);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div
       style={{
-        display: isModalOpen !== ModalEnums.cookiesModal ? "none" : "block",
+        display: isDisplay,
       }}
     >
-      <ul className="mb-20">
+      <ul className={s["cookie-list"]}>
         {[
           {
             title: "Your Privacy",
@@ -63,38 +74,27 @@ const ModalCookies: FC = () => {
           },
         ].map(({ title, desc }, index) => {
           return (
-            <li key={index} className="mb-20 last:mb-0">
+            <li key={index} className={s["cookie-sentence"]}>
               <div>
-                <p className="title mb-4">{title}</p>
+                <p className={s["cookie-title"]}>{title}</p>
                 {index === 2 && (
-                  <label
-                    className="w-28 h-14 flex items-center 
-                  relative cursor-pointer mb-4"
-                  >
+                  <label className={s["cookie-label"]}>
                     <input
                       type="checkbox"
-                      className="hidden peer"
+                      className="hidden"
                       onChange={() => setCheckboxState((state) => !state)}
                     />
-                    <div
-                      className="w-full h-2/5 border-[0.05rem] border-op-primary 
-                    rounded-md peer-checked:border-primary"
-                    ></div>
+                    <div className={`${s["cookie-checkbox"]}`}></div>
                     <span
-                      className={`${s.like} peer-checked:translate-x-14
-                     peer-checked:border-accent peer-checked:text-primary
-                      peer-checked:bg-secondary`}
+                      className={`${s.like} !scale-100 ${
+                        checkboxState ? "translate-x-14" : "translate-x-0"
+                      }
+                     `}
                     >
-                      {checkboxState ? (
-                        <IconComponent
-                          nameIcon={"AiFillLike"}
-                          propsIcon={{ size: 25 }}
-                        />
+                      {checkboxState && hasCookie ? (
+                        <IconComponent nameIcon={"AiFillLike"} />
                       ) : (
-                        <IconComponent
-                          nameIcon={"AiFillDislike"}
-                          propsIcon={{ size: 25 }}
-                        />
+                        <IconComponent nameIcon={"AiFillDislike"} />
                       )}
                     </span>
                   </label>
@@ -105,34 +105,31 @@ const ModalCookies: FC = () => {
           );
         })}
       </ul>
-      <ButtonConstrComponent
-        options={[
-          {
-            buttonTitle: "",
-            buttonCustomStyles: `w-full mb-4 hover:!border-accent 
-            hover:!bg-secondary hover:!text-primary text-start`,
-            event: () =>
-              handleToggleButton(ModalCookieEnums.cookieConsentCustom),
-            textContent: "Confirm",
-          },
-          {
-            buttonTitle: "",
-            buttonCustomStyles: `w-full mb-4 hover:!border-accent 
-            hover:!bg-secondary hover:!text-primary text-start`,
-            event: () =>
-              handleToggleButton(ModalCookieEnums.cookieRejectionAll),
-            textContent: "Reject all",
-          },
-          {
-            buttonTitle: "",
-            buttonNewStyles: `w-full text-start border-[0.05rem] border-primary p-4 
-            rounded-xl bg-primary text-secondary hover:bg-secondary hover:text-primary`,
-            event: () => handleToggleButton(ModalCookieEnums.cookieConsentAll),
-            textContent: "Allow all",
-            isButtonDisabled: checkboxState,
-          },
-        ]}
-      />
+      <div className={s["cookie-box"]}>
+        <ButtonConstrComponent
+          options={[
+            {
+              buttonTitle: "",
+              className: s["cookie-confirm"],
+              event: () => handleToggleButton(cookieConsentCustom),
+              textContent: "Confirm",
+            },
+            {
+              buttonTitle: "",
+              className: s["cookie-reject"],
+              event: () => handleToggleButton(cookieRejectionAll),
+              textContent: "Reject all",
+            },
+            {
+              buttonTitle: "",
+              className: s["cookie-allow"],
+              event: () => handleToggleButton(cookieConsentAll),
+              textContent: "Allow all",
+              isButtonDisabled: checkboxState,
+            },
+          ]}
+        />
+      </div>
     </div>
   );
 };

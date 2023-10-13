@@ -19,7 +19,7 @@ const Testimonials: FC = () => {
     <section className="pb-40">
       <div id="testimonials" className="-translate-y-12" />
       <div className="custom-c">
-        <h3 className={s.title}>Testimonials</h3>
+        <h3 className={s.tile}>Testimonials</h3>
         <div className={s.content}>
           <button
             type="button"
@@ -28,7 +28,6 @@ const Testimonials: FC = () => {
           >
             <IconComponent
               nameIcon="AiOutlineArrowLeft"
-              propsIcon={{ size: 24 }}
             />
           </button>
           <button
@@ -38,7 +37,6 @@ const Testimonials: FC = () => {
           >
             <IconComponent
               nameIcon="AiOutlineArrowRight"
-              propsIcon={{ size: 24 }}
             />
           </button>
         </div>
@@ -50,7 +48,7 @@ const Testimonials: FC = () => {
             {[
               {
                 id: 1,
-                customerName: "Leonard Heiser",
+                customerName: "Leonard H.",
                 customerFrom: "Envato customer",
                 img: { url: "/avatar.jpg", alt: "Testimonials avatar" },
                 desc: `We have purchased well into the thousands of items, 

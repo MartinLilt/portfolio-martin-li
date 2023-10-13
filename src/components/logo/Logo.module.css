@@ -1,3 +1,19 @@
 .logo {
-    @apply text-primary uppercase font-bold select-none;
+    @apply select-none border-wrap xl:!w-[15%]
+    p-4 hover:border-accent leading-[0.8];
+}
+
+.border {
+    @apply border-accent flex 
+    items-center justify-between;
+}
+
+.home {
+    @apply mr-4 flex xl:mr-0 w-full
+    items-center justify-between xl:w-[unset];
+}
+
+.text {
+    @apply title flex 
+    !leading-[0.8];
 }

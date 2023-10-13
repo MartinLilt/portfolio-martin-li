@@ -3,7 +3,7 @@ import s from "./SocialList.module.css";
 import { IconComponent } from "..";
 import { ISocialOptions } from "./socialList.interface";
 
-const SocialList: FC<ISocialOptions> = ({ options, iconSize = 25 }) => {
+const SocialList: FC<ISocialOptions> = ({ options }) => {
   return (
     <ul className={s.list}>
       {options?.map(({ link: { href, alt }, icon }, index) => {
@@ -16,7 +16,7 @@ const SocialList: FC<ISocialOptions> = ({ options, iconSize = 25 }) => {
               rel="noopener noreferrer"
               className={s.link}
             >
-              <IconComponent nameIcon={icon} propsIcon={{ size: iconSize }} />
+              <IconComponent nameIcon={icon} />
             </a>
           </li>
         );

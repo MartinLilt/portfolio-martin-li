@@ -1,0 +1,24 @@
+.form div {
+    @apply mb-4;
+}
+
+.field {
+    @apply input outline-none desc hover:border-primary
+    focus:border-accent;
+}
+
+.symbols {
+    @apply block desc mb-12;
+}
+
+.submit {
+    @apply btn p-hover;
+}
+
+.error {
+    @apply !border-accent !text-accent;
+}
+
+.label {
+    @apply desc text-accent mt-4 block;
+}

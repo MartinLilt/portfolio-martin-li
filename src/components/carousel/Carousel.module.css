@@ -1,36 +1,34 @@
 .sentence {
   @apply p-4 pb-12 relative before:content-[''] before:block 
-  before:w-[99%] before:h-full before:absolute before:top-0 
-  before:left-[0.05rem] before:border-[0.05rem] before:border-op-primary
-  before:rounded-xl;
-
-  flex: 0 0 100%;
-}
-
-@media screen and (min-width: 1280px) {
-  .sentence {
-    flex: 0 0 50%;
-  }
+  before:w-[98%] before:h-full before:absolute before:top-0 
+  before:left-slice before:border-light before:border-primary-op
+  before:rounded-xl flex-full xl:flex-half;
 }
 
 .client {
-  @apply block font-light mb-4;
+  @apply block desc mb-4;
 }
 
 .content {
-    @apply flex mb-4;
+  @apply flex mb-4;
 }
 
 .image {
-    @apply rounded-xl mr-4;
+  @apply rounded-xl mr-4;
 }
 
 .name {
-    @apply p-2 px-4 rounded-xl 
-    border-[0.05rem] border-op-primary flex max-w-max 
-    font-light mb-4;
+  @apply tag m-0 mb-4;
 }
 
-.desc {
-    @apply block md:w-[95%];
+.description {
+  @apply block md:w-[95%] text;
+}
+
+.description > p > span {
+  @apply title;
+}
+
+.ranked {
+  @apply desc;
 }

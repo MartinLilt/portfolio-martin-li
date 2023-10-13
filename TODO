@@ -1,0 +1,61 @@
+Here is the plan:
+
+2023.10.05:
+done - Resolve the issue with my feedback form and useRef = null.
+done - Implement a scrolling menu for cookies and a back button.
+done - Create and configure a modal window for cookies.
+
+2023.10.06:
+done - Add validation fields to the feedback form.
+- Complete the service page for cases.
+done - Finish configuring Tailwind CSS style groups.
+
+2023.10.07:
+- Finalize the portfolio page for cases.
+- Simplify CSS stylesheet classes.
+- Implement a website preloader.
+
+2023.10.08:
+- Customize the three.js library for the service cards.
+- Redesign the hero title for better responsiveness.
+- Optimize the resume section for improved UX performance.
+
+2023.10.09:
+- Edit the error page to resolve Next.js warnings.
+- Add a custom component to handle element states like isLoading or isError.
+- Address the issue with react-icons, which is causing excessive fetch requests.
+
+2023.10.10:
+- Create a custom cursor component to apply different CSS styles on various events.
+- Incorporate simple framer-motion animations for site elements.
+- Enhance hover and focus effects using framer-motion animations.
+
+2023.10.11:
+- Integrate the i8 library for website language switching.
+- Add the Lithuanian language.
+- Implement aria-labels for the website and test the results in the devTools audit section.
+
+2023.10.12:
+- Integrate the sanity.io CMS system.
+- Create sanity.io schemas for website data.
+- Implement validation for sanity.io schemas.
+
+2023.10.13:
+- Implement API integration from sanity.io.
+- Create static paths for dynamic slug web pages.
+- Enable lazy loading of dynamic components.
+
+2023.10.14:
+- Configure Mailchimp for subscribing and sending customer emails.
+- Add meta tags and customize them using sanity.io.
+- Implement Google reCAPTCHA validation for the form.
+
+2023.10.15:
+- Review and improve the website semantic tags in HTML.
+- Review and improve the style classNames following the BEM methodology rules.
+- Configure and optimize the next.js image components.
+
+2023.10.16:
+- Review and improve the prop types following the typeScript (TS) rules in project components.
+- Review and improve file, directory, and function names to increase the code understanding level.
+- Add the optimizer for unused CSS properties and test it.

@@ -3,13 +3,13 @@
 }
 
 .content {
-  @apply text-primary text-xl font-light xl:w-1/2;
+  @apply text-primary xl:w-1/2;
 }
 
 .title {
-    @apply uppercase mb-4;
+    @apply up-desc mb-4;
 }
 
-.text {
-    @apply leading-9;
+.desc {
+    @apply text;
 }

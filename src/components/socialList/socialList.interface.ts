@@ -8,5 +8,4 @@ interface ISocialListProps {
 
 export interface ISocialOptions {
   options: ISocialListProps[];
-  iconSize?: number;
 }

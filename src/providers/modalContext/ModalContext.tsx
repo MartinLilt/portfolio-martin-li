@@ -6,10 +6,8 @@ export const ModalContext = createContext<IModalContextType | null>(null);
 const ModalProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [isModalOpen, setIsModalOpen] = useState<ModalTypes>(null);
 
-  const toggleModal = (modalType: ModalTypes) => {
-    setIsModalOpen((prevModalType) =>
-      prevModalType === modalType ? null : modalType
-    );
+  const toggleModal = (state: ModalTypes) => {
+    setIsModalOpen(state);
   };
 
   return (

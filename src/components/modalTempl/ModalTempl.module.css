@@ -1,23 +1,139 @@
-.title {
-  @apply uppercase text-primary text-3xl font-light mt-8
-    after:content-[''] after:block after:w-full after:h-[0.05rem]
-    after:bg-op-primary after:mt-4 after:mb-14 4sm:after:mb-20;
+.overlay-title {
+  @apply up-title border-after 
+  after:mt-4 after:mb-12 pt-12;
 }
 
 .overlay {
-  @apply w-full h-[100vh] fixed top-0 left-full p-4;
+  @apply w-full h-[100vh] fixed top-0 
+  left-0 p-4 bg-second z-20;
   transition: all 0.5s ease-in-out;
 }
 
 .content {
-  @apply border-[0.05rem] border-op-primary rounded-xl
-    p-4 h-3x2/2 overflow-y-scroll;
+  @apply border-wrap h-3x2/2 
+  overflow-y-scroll;
 }
 
 .box {
-  @apply flex justify-between mb-4 items-center;
+  @apply center mb-4;
+}
+
+.box ul li {
+  @apply hidden;
+}
+
+.box ul li:nth-child(-n+3) {
+  @apply block;
 }
 
 .like {
   @apply icon-button absolute;
+}
+
+.toast {
+  @apply fixed px-4 w-full z-20 
+  mt-[0.05rem] cursor-pointer;
+}
+
+.action {
+  @apply border-wrap bg-second 
+  !border-primary back-shadow;
+}
+
+.success,
+.error {
+  @apply !title mb-4;
+}
+
+.s-text,
+.e-text {
+  @apply text;
+}
+
+.cookie-list {
+  @apply mb-20;
+}
+
+.cookie-sentence {
+  @apply mb-20 last:mb-0;
+}
+
+.cookie-title {
+  @apply title mb-4;
+}
+
+.cookie-label {
+  @apply w-28 h-14 flex items-center 
+  relative cursor-pointer mb-4;
+}
+
+.cookie-checkbox {
+  @apply w-full h-2/5 border-wrap !p-0 !rounded-md;
+}
+
+.cookie-box {
+  @apply flex flex-col;
+}
+
+.cookie-confirm {
+  @apply btn s-hover w-full hover:!scale-110 mb-4;
+}
+
+.cookie-reject {
+  @apply btn s-hover w-full hover:!scale-110 mb-4;
+}
+
+.cookie-allow {
+  @apply btn s-hover bg-primary w-full
+  text-second hover:border-primary hover:!scale-110;
+}
+
+.scroll-section {
+  @apply px-4 fixed bottom-0 w-full z-20 flex
+  pointer-events-none h-[508px] flex-col justify-end;
+}
+
+.scroll-content {
+  @apply flex justify-end mb-4;
+}
+
+.scroll-lang {
+  @apply icon-button mb-4 underline text-sm
+  pointer-events-auto back-shadow w-min;
+}
+
+.scroll-cookie {
+  @apply icon-button pointer-events-auto 
+  back-shadow w-min;
+}
+
+.scroll-arrow {
+  @apply icon-button pointer-events-auto s-hover
+  mt-4 back-shadow w-min bg-primary text-second;
+}
+
+.scroll-box {
+  @apply border-wrap bg-second flex flex-col 
+  xl:flex-row xl:justify-between;
+}
+
+.scroll-text {
+  @apply text mb-4 xl:mb-0;
+}
+
+.scroll-container {
+  @apply flex flex-wrap pointer-events-auto 3sm:justify-end;
+}
+
+.scroll-more {
+  @apply mr-4 mb-4 btn s-hover 3sm:mb-0;
+}
+
+.scroll-decline {
+  @apply btn bg-primary text-second 
+  mb-4 p-hover 3sm:mr-4 3sm:mb-0;
+}
+
+.scroll-allow {
+  @apply btn s-hover w-full hover:!scale-110 3sm:w-auto;
 }

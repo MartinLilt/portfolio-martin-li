@@ -1,7 +1,6 @@
-.title {
-    @apply uppercase text-primary text-3xl font-light
-    after:content-[''] after:block after:w-full after:h-[0.05rem]
-    after:bg-op-primary after:mt-4 after:mb-20;
+.tile {
+    @apply up-title border-after 
+    after:mt-4 after:mb-12;
 }
 
 .content {
@@ -9,12 +8,10 @@
 }
 
 .button {
-    @apply p-4 md:px-8 rounded-xl text-primary 
-    bg-secondary border-[0.05rem] border-primary mr-4
-    hover:text-secondary hover:bg-primary;
+    @apply icon-button mr-4 last:mr-0;
 }
 
 .list {
-    @apply text-primary flex;
+    @apply flex;
     transition: transform 0.5s ease-in-out;
 }
