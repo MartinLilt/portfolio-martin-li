@@ -3,17 +3,18 @@
 }
 
 .list {
-  @apply xl:flex xl:justify-between xl:items-center xl:h-full;
+  @apply xl:center xl:h-full;
 }
 
 .sentence {
   @apply border-wrap mb-4 last:mb-0 
-   cursor-pointer xl:flex xl:justify-between xl:border-transparent
-  xl:items-center xl:h-full xl:mb-0 hover:border-accent;
+   cursor-pointer xl:center xl:border-transparent 
+   xl:h-full xl:mb-0 hover:border-accent;
 }
 
 .anchor-text {
-  @apply title mb-4 last:mb-0 xl:mb-0 xl:up-text;
+  @apply title mb-4 last:mb-0 
+  xl:mb-0 xl:up-text;
 }
 
 .anchor-desc {

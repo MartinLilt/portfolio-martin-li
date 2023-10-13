@@ -37,7 +37,6 @@ const Header: FC = () => {
             <span className={s.action}>Drop me a line</span>
             <IconComponent
               nameIcon={"MdOutgoingMail"}
-              propsIcon={{ size: 25 }}
             />
           </a>
           <button
@@ -45,7 +44,7 @@ const Header: FC = () => {
             className={s.button}
             onClick={() => toggleModal(ModalEnums.mobileMenu)}
           >
-            <IconComponent nameIcon={"FiMenu"} propsIcon={{ size: 25 }} />
+            <IconComponent nameIcon={"FiMenu"} />
           </button>
         </div>
       </header>

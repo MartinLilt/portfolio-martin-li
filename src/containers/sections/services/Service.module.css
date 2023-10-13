@@ -1,22 +1,13 @@
-.title {
-  @apply uppercase text-primary text-3xl font-light
-    after:content-[''] after:block after:w-full after:h-[0.05rem]
-    after:bg-op-primary after:mt-4 after:mb-20;
+.name {
+  @apply mb-4 title;
 }
 
-.text {
-  @apply !leading-[1.2] 
-    text-3xl md:text-5xl xl:text-6xl mb-4
-    text-primary;
-}
-
-.desc {
-  @apply leading-9 font-light text-xl
-    mb-4;
+.description {
+  @apply text mb-4;
 }
 
 .list {
-    @apply text-primary 2md:flex 2md:justify-between 
+  @apply 2md:flex 2md:justify-between 
     2md:flex-wrap xl:flex-nowrap;
 }
 
@@ -26,44 +17,42 @@
 }
 
 .tablist {
-    @apply flex flex-wrap translate-x-[-0.25rem]
+  @apply flex flex-wrap translate-x-[-0.25rem]
     xl:hidden mt-4 xl:mt-0;
-  }
+}
 
 .sentence {
-  @apply border-[0.05rem] border-op-primary p-4
-  rounded-xl mb-20 last:mb-0 2md:w-2x1/2 2md:last:w-full lg:w-x1/2
-  hover:border-accent xl:last:w-auto xl:mb-0 xl:mr-4 
+  @apply border-wrap mb-20 last:mb-0 2md:w-2x1/2 
+  2md:last:w-full lg:w-x1/2 hover:border-accent 
+  xl:last:w-auto xl:mb-0 xl:mr-4 
   xl:last:mr-0 xl:w-auto;
 }
 
 .sentence:last-child > .link {
-    @apply 2md:flex xl:block;
+  @apply 2md:flex xl:block;
 }
 
 .sentence:last-child > .link .canvas {
-    @apply 2md:mb-0 2md:mr-4 2md:h-[22rem] xl:h-48 xl:mb-12
+  @apply 2md:mb-0 2md:mr-4 2md:h-[22rem] xl:h-48 xl:mb-12
     xl:w-full 2md:w-3x2/2;
 }
 
 .sentence:last-child > .link .content {
-    @apply 2md:absolute 2md:w-3x2/2 2md:right-4 xl:static
+  @apply 2md:absolute 2md:w-3x2/2 2md:right-4 xl:static
     xl:w-full;
 }
 
-.sentence:last-child > .link .content .box > .text {
-    @apply xl:w-4/5;
+.sentence:last-child > .link .content .box > .name {
+  @apply xl:w-4/5;
 }
 
 .tagsentence {
-  @apply p-2 px-4 rounded-xl text-primary 
-    border-[0.05rem] border-op-primary flex max-w-max 
-    font-light capitalize m-1;
+  @apply tag;
 }
 
 .canvas {
-  @apply w-full border-[0.05rem] border-op-primary
-  rounded-xl mb-12 h-48;
+  @apply w-full border-wrap 
+  mb-12 h-48;
 }
 
 .link {
@@ -75,9 +64,9 @@
 }
 
 .case {
-    @apply font-light block mb-4;
+  @apply desc block mb-4;
 }
 
 .box {
-    @apply max-w-[490px]
+  @apply max-w-[490px];
 }

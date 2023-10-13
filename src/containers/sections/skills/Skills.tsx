@@ -7,7 +7,7 @@ const Skills: FC = () => {
     <section className={s.section}>
       <div className="custom-c">
         <h3
-          className={s.title}
+          className={s.tile}
         >
           Skills
         </h3>
@@ -78,10 +78,10 @@ const Skills: FC = () => {
                 <div className="text-primary">
                   <span className={s.content}>
                       <span className={s.progressbar} style={{ width: `${progress}%` }}></span>
-                    <IconComponent nameIcon={name} propsIcon={{ size: 40 }} />
+                    <IconComponent nameIcon={name} size={40} />
                     <span className={s.progress}>{`${progress} %`}</span>
                   </span>
-                  <p className={s.text}>
+                  <p className={s.skill}>
                     {title}
                   </p>
                 </div>

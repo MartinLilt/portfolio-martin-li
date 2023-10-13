@@ -1,26 +1,24 @@
 import { FC } from "react";
-import s from "./Button.module.css";
 import { IButtin } from "./button.interface";
-import cn from 'classnames'
 
 const Button: FC<IButtin> = ({
   children,
   buttonType = "button",
   buttonTitle,
-  buttonCustomStyles,
-  buttonNewStyles = s.default,
+  className = "btn",
+  styles,
   isButtonDisabled,
   onClickEvent,
 }) => {
-
+  const isVisible = isButtonDisabled ? "!hidden" : "!visible";
   return (
     <button
       title={buttonTitle}
-      className={`${buttonNewStyles} ${buttonCustomStyles}`}
+      className={`${className} ${isVisible}`}
       type={buttonType}
       onClick={onClickEvent}
       disabled={isButtonDisabled}
-      style={{ display: isButtonDisabled ? 'none' : 'block'}}
+      style={styles}
     >
       {children}
     </button>

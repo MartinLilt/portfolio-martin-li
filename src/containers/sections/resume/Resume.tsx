@@ -7,7 +7,7 @@ const Resume: FC = () => {
     <section className={s.section}>
       <div className="custom-c">
         <h3
-          className={s.title}
+          className={s.tile}
         >
           Resume
         </h3>
@@ -40,17 +40,17 @@ const Resume: FC = () => {
                   >
                     {`${date.start} - ${date.end}`}
                   </span>
-                  <p className={s.text}>
+                  <p className={s.name}>
                     {title}
                   </p>
                   <span className={s.icon}>
-                    <IconComponent nameIcon={logo} propsIcon={{ size: 40 }} />
+                    <IconComponent nameIcon={logo} size={40} />
                   </span>
                 </div>
                 <h4
                   className={s.supptitle}
                 >
-                  <span className={s.desc}>{desc}</span>
+                  <span className={s.description}>{desc}</span>
                 </h4>
               </li>
             );

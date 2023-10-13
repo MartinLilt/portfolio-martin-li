@@ -4,23 +4,12 @@ import { useModal } from "@/hooks";
 import { NavListComponent } from "..";
 import { ModalEnums } from "@/providers";
 
-const ModalMobile: FC = () => {
-  const { mobileMenu, cookiesModal } = ModalEnums;
-  const { isModalOpen } = useModal();
-
-  useEffect(() => {
-    if (document.body) {
-      document.body.style.overflowY =
-        isModalOpen === mobileMenu || isModalOpen === cookiesModal
-          ? "hidden"
-          : "auto";
-    }
-  }, [isModalOpen, mobileMenu, cookiesModal]);
-
+const ModalMobile: FC<{ display: boolean }> = ({ display }) => {
+  const isDisplay = display ? "block" : "none";
   return (
     <div
       style={{
-        display: isModalOpen === mobileMenu ? "block" : "none",
+        display: isDisplay,
       }}
     >
       <NavListComponent

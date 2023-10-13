@@ -4,13 +4,13 @@ import { useModal } from "@/hooks";
 import { ModalEnums } from "@/providers";
 
 const ModalToast: FC = () => {
-  const { isModalOpen } = useModal();
+  const { isModalOpen, toggleModal } = useModal();
   const { toastModalError, toastModalSuccess } = ModalEnums;
   const isToastSuccess = isModalOpen === toastModalSuccess;
   const isToastError = isModalOpen === toastModalError;
 
   return (
-    <div
+    <div onClick={() => toggleModal(null)}
       className={s.toast}
       style={{
         display: isToastSuccess || isToastError ? "block" : "none",

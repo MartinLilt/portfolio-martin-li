@@ -1,18 +1,24 @@
-.name,
-.subject,
-.mail,
-.description {
-  @apply input mb-4 outline-none desc focus:border-accent;
+.form div {
+    @apply mb-4;
 }
 
-.description {
-    @apply h-40;
+.field {
+    @apply input outline-none desc hover:border-primary
+    focus:border-accent;
 }
 
-.button {
+.symbols {
+    @apply block desc mb-12;
+}
+
+.submit {
     @apply btn p-hover;
 }
 
-.text-left {
-    @apply desc block mb-12;
+.error {
+    @apply !border-accent !text-accent;
+}
+
+.label {
+    @apply desc text-accent mt-4 block;
 }

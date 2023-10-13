@@ -8,7 +8,7 @@ const Ranked: FC<{ rankedValue: number }> = ({ rankedValue }) => {
     .map((_, index) => (
       <IconComponent
         nameIcon={"BsFillStarFill"}
-        propsIcon={{ size: 18 }}
+        size={15}
         key={index}
       />
     ));

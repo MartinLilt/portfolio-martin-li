@@ -13,5 +13,5 @@
 
 .icon {
     @apply border-wrap block w-min cursor-pointer absolute
-     hover:bg-primary hover:text-secondary ml-auto;
+     hover:bg-primary hover:text-second ml-auto;
 }

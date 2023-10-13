@@ -3,15 +3,11 @@
 }
 
 .sentence {
-  @apply border-[0.05rem] border-op-primary rounded-xl w-min
-    m-1 cursor-pointer text-primary hover:text-secondary
-    hover:bg-primary hover:scale-125 hover:drop-shadow-2xl
-    hidden;
+  @apply border-wrap !p-0 w-min
+    m-1 cursor-pointer text-primary hover:text-second
+    hover:bg-primary hover:scale-110 hover:drop-shadow-2xl
 }
 
-.sentence:nth-child(-n+3) {
-  @apply block;
-}
 
 .link {
   @apply p-4 block;

@@ -5,9 +5,9 @@ import circle from "@/assets/icons/circle.svg";
 
 const Clients: FC = () => {
   return (
-    <section className="pb-40">
+    <section className={s.section}>
       <div className="custom-c relative">
-        <h3 className={s.title}>Partnerships</h3>
+        <h3 className={s.partner}>Partners</h3>
         <div>
           <ul className={s.list}>
             {[
@@ -23,7 +23,7 @@ const Clients: FC = () => {
                     src={url}
                     alt={alt}
                     draggable={false}
-                    width={100}
+                    width={80}
                     height={24}
                     className={s.image}
                   />
@@ -31,8 +31,8 @@ const Clients: FC = () => {
               );
             })}
           </ul>
-          <div className="lg:w-4/5 xl:w-2/3">
-            <span className="block font-light mb-8 text-primary">
+          <div className={s.container}>
+            <span className={s.guarantees}>
               My guarantees:
             </span>
             <h4 className={s.text}>
@@ -42,8 +42,7 @@ const Clients: FC = () => {
             <Image
             src={circle}
             alt="Decoration circle"
-            className="hidden xl:block absolute 
-            top-[10rem] right-0 opacity-[15%] w-[50%]"
+            className={s.circle}
           />
           </div>
         </div>

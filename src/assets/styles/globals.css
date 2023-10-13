@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100;400;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -30,17 +30,23 @@
   --accent-button-color: rgb(85, 230, 165);
 
   --shadow-color: #000;
-
   --border-radius: 0.75rem;
 }
 
-
 body {
-  @apply bg-secondary text-base box-border relative overflow-x-hidden
-  xl:!overflow-y-auto text-primary;
-  font-family: 'Sora', sans-serif;
+  @apply bg-second text-base box-border relative 
+  overflow-x-hidden xl:!overflow-y-auto text-primary;
+  font-family: "Sora", sans-serif;
 }
 
 .custom-c {
-  @apply mx-5 2sm:mx-8 3sm:mx-12;
+  @apply mx-5 2sm:mx-8 3sm:mx-12 md:mx-[5.5rem];
+}
+
+.hide {
+  @apply hidden;
+}
+
+.show {
+  @apply block;
 }

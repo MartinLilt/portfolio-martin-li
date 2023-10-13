@@ -1,18 +1,18 @@
-import { ModalCookieTypes, ModalTypes } from "@/providers";
+import { CSSProperties, HTMLProps } from "react";
 
 export interface IButtonConstructorProps {
-    buttonTitle: string;
-    buttonCustomStyles?: string;
-    buttonNewStyles?: string;
-    isButtonDisabled?: boolean;
-    icon?: {
-        name: string;
-        size: number;
-    }
-    event: () => void;
-    textContent?: string;
+  buttonTitle: string;
+  className?: HTMLProps<HTMLElement>["className"];
+  styles?: CSSProperties;
+  isButtonDisabled?: boolean;
+  icon?: {
+    name: string;
+    size?: number;
+  };
+  event: () => void;
+  textContent?: string;
 }
 
 export interface IButtonConstructorOptions {
-    options: IButtonConstructorProps[];
+  options: IButtonConstructorProps[];
 }

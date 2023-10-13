@@ -7,7 +7,7 @@ const Portfolio: FC = () => {
   return (
     <section className={s.section}>
       <div className="custom-c">
-        <h3 className={s.title}>Portfolio</h3>
+        <h3 className={s.tile}>Portfolio</h3>
         <ul className={s.list}>
           {[
             {
@@ -70,12 +70,12 @@ const Portfolio: FC = () => {
                   <Link href={casePath}>
                     <div className={s.content}>
                       <span className={s.overlay}>
-                        <span className="font-light block mb-4">
+                        <span className="desc block mb-4">
                           Click to see..
                         </span>
                         <span className="4sm:w-4/5 xl:w-[90%] block">
                           <p className={s.suptitle}>{suptitle}</p>
-                          <p className={s.desc}>{desc}</p>
+                          <p className={s.description}>{desc}</p>
                         </span>
                       </span>
                       <Image
@@ -88,7 +88,7 @@ const Portfolio: FC = () => {
                         className={s.image}
                       />
                     </div>
-                    <h4 className={s.text}>{title}</h4>
+                    <h4 className={s.tagtext}>{title}</h4>
                     <ul className={s.taglist}>
                       {tags?.map((item, index) => (
                         <li key={index} className={s.tagsentence}>

@@ -4,8 +4,8 @@ import s from './Cv.module.css'
 const Cv: FC = () => {
 
   const handleDownloadCvFile = () => {
-    const googleDriveFileId = "15YtMo4xTwv1jcNcrxvRM3Fa4jlXuImPv";
-    const googleDriveUrl = `https://drive.google.com/uc?export=download&id=${googleDriveFileId}`;
+    const googleDriveFileId = process.env.NEXT_PUBLIC_CV_ID;
+    const googleDriveUrl = `${process.env.NEXT_PUBLIC_CV_LINK}&id=${googleDriveFileId}`;
     const a = document.createElement("a");
     a.href = googleDriveUrl;
     a.download = "cv.pdf";
@@ -26,7 +26,7 @@ const Cv: FC = () => {
                 key={index}
               >
                 <span className={s.text}>{item.largeValueOfExp}</span>
-                <p className={s.desc}>{item.textDesc}</p>
+                <p className={s.description}>{item.textDesc}</p>
               </li>
             );
           })}

@@ -5,9 +5,10 @@ import { useModal, useCookies } from "@/hooks";
 import { ModalEnums, ModalCookieEnums, ModalCookieTypes } from "@/providers";
 
 const ModalScroll: FC = () => {
-  const { isModalOpen, toggleModal } = useModal();
+  const { toggleModal } = useModal();
   const [isActiveCookieBar, setCookieBar] = useState(true);
   const { setCookies, hasCookie } = useCookies();
+  const { cookiesModal } = ModalEnums;
 
   useEffect(() => {
     if (hasCookie) {
@@ -24,69 +25,67 @@ const ModalScroll: FC = () => {
 
   const handleToggleCookieState = (cookieValue?: ModalCookieTypes) => {
     if (cookieValue) setCookies(cookieValue);
-    if (!cookieValue) toggleModal(ModalEnums.cookiesModal);
+    if (!cookieValue) toggleModal(cookiesModal);
     setCookieBar(false);
   };
 
   return (
     <div
-      className="px-4 fixed bottom-0 w-full 
-      pointer-events-none h-[395px] flex-col justify-between"
-      style={{ display: isModalOpen ? "none" : "flex" }}
+      className={s["scroll-section"]}
     >
-      <div className="flex justify-end">
-        <div>
+      <div className={s["scroll-content"]}>
+        <div className="md:px-4">
           <ButtonConstrComponent
             options={[
               {
                 buttonTitle: "",
-                buttonCustomStyles:
-                  "icon-button pointer-events-auto back-shadow w-min",
+                className: s["scroll-lang"],
                 event: () => setCookieBar((state) => !state),
-                icon: { name: "MdCookie", size: 25 },
+                textContent: 'EN',
               },
               {
                 buttonTitle: "",
-                buttonCustomStyles:
-                  "icon-button pointer-events-auto mt-4 back-shadow w-min",
+                className: s["scroll-cookie"],
+                event: () => setCookieBar((state) => !state),
+                icon: { name: "MdCookie" },
+              },
+              {
+                buttonTitle: "",
+                className: s["scroll-arrow"],
                 event: () => handleScrollToLink("up-arrow"),
-                icon: { name: "AiOutlineArrowUp", size: 25 },
+                icon: { name: "AiOutlineArrowUp" },
               },
             ]}
           />
         </div>
       </div>
       <div
-        className="border-wrap bg-secondary xl:flex xl:justify-between xl:items-center"
-        style={{ display: !isActiveCookieBar ? "none" : "block" }}
+        className={s["scroll-box"]}
+        style={{ display: !isActiveCookieBar ? "none" : "flex" }}
       >
-        <p className="text mb-4 xl:mb-0">
+        <p className={s["scroll-text"]}>
           We use cookies to enhance site navigation, analyse site usage, and
           assist in our marketing efforts.
         </p>
-        <span className="flex justify-end pointer-events-auto">
+        <span className={s["scroll-container"]}>
           <ButtonConstrComponent
             options={[
               {
                 buttonTitle: "",
-                buttonNewStyles: `p-4 mr-4 border-[0.05rem] 
-                border-transparent hover:border-accent rounded-xl`,
+                className: s["scroll-more"],
                 event: () => handleToggleCookieState(),
                 textContent: "...",
               },
               {
                 buttonTitle: "",
-                buttonNewStyles: `border-[0.05rem] border-primary p-4 
-                text-secondary bg-primary rounded-xl hover:text-primary 
-                hover:bg-secondary mr-4`,
+                className: s["scroll-decline"],
                 event: () =>
                   handleToggleCookieState(ModalCookieEnums.cookieRejectionAll),
                 textContent: "Decline",
               },
               {
                 buttonTitle: "",
-                buttonNewStyles: `border-[0.05rem] border-primary 
-                p-4 rounded-xl hover:border-accent`,
+                className: s["scroll-allow"],
                 event: () =>
                   handleToggleCookieState(ModalCookieEnums.cookieConsentAll),
                 textContent: "Allow all",

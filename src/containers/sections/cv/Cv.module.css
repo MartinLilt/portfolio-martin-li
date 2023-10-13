@@ -7,7 +7,8 @@
 }
 
 .list {
-    @apply flex flex-wrap items-center mb-10 mr-auto 2md:mb-0;
+    @apply flex flex-wrap 2md:w-1/2 3md:w-auto
+    items-center mb-10 mr-auto 2md:mb-0;
 }
 
 .sentence {
@@ -19,12 +20,10 @@
     @apply mr-4 text-8xl;
 }
 
-.desc {
-    @apply w-36 font-light;
+.description {
+    @apply w-28 desc;
 }
 
 .button {
-    @apply p-4 px-8 rounded-xl text-secondary 
-    bg-primary border-[0.1rem] border-primary
-    hover:text-primary hover:bg-secondary flex;
+    @apply btn p-hover;
 }

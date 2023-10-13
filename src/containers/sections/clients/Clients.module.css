@@ -1,40 +1,47 @@
-.title {
-    @apply uppercase text-primary text-3xl font-light
-    after:content-[''] after:block after:w-full after:h-[0.05rem]
-    after:bg-op-primary after:mt-4 after:mb-20;
+.partner {
+  @apply up-title border-after 
+    after:mt-4 after:mb-12;
 }
 
 .list {
-    @apply flex flex-wrap mb-[4.5rem] translate-x-[-0.5rem];
+  @apply flex flex-wrap 
+    mb-[4.5rem] translate-x-[-0.5rem];
 }
 
 .sentence {
-    @apply border-[0.05rem] border-op-primary
-     p-4 rounded-xl m-2 h-14;
+  @apply border-wrap m-1 h-14;
 }
 
 .image {
-    @apply opacity-60;
+  @apply opacity-60;
 }
 
 .text {
-    @apply text-primary text-3xl 4sm:w-4/5 md:text-5xl xl:text-6xl 
-    leading-extra-sm select-none md:leading-extra-base xl:leading-extra-lg mb-4;
+  @apply title;
 }
 
 .decoration {
-    @apply inline-block leading-normal md:text-8xl relative 
-    border-[0.05rem] border-op-primary 
-    rounded-xl px-4 after:content-['+'] before:content-['+'] 
+  @apply inline-block leading-normal md:text-8xl relative 
+   border-wrap !py-0 after:content-['+'] before:content-['+'] 
     after:absolute after:bottom-[-20px] after:right-[-4px] before:absolute 
     before:top-[-20px] before:left-[-3px] before:text-xl 
     after:drop-shadow-2xl before:drop-shadow-2xl mb-2
     after:text-xl before:text-primary after:text-primary;
 }
 
-/* .circle {
-    @apply relative before:content-[''] before:block
-    before:w-96 before:h-96 before:border-[0.05rem]
-    before:border-primary before:absolute before:top-0
-    before:right-0 before:rounded-full;
-} */
+.section {
+  @apply pb-40;
+}
+
+.container {
+  @apply lg:w-4/5 xl:w-2/3;
+}
+
+.guarantees {
+  @apply desc mb-8 block;
+}
+
+.circle {
+  @apply hidden xl:block absolute 
+    top-[10rem] right-0 opacity-[15%] w-[45%];
+}

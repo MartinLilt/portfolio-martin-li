@@ -15,13 +15,45 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      
+      textColor: {
+        'primary': 'var(--text-color)',
+        'primary-op': 'var(--text-op-color)',
+        'second': 'var(--second-text-color)',
+        'second-op': 'var(--second-text-op-color)',
+        'accent': 'var(--accent-text-color)',
+      },
 
-      colors: {
-        primary: "#fff",
-        "op-primary": "#ffffff5c",
-        secondary: "#000",
-        "op-secondary": "#0000005c",
-        accent: "rgb(85, 230, 165)",
+      borderColor: {
+        'primary': 'var(--border-color)',
+        'primary-op': 'var(--border-op-color)',
+        'second': 'var(--second-border-color)',
+        'second-op': 'var(--second-border-op-color)',
+        'accent': 'var(--accent-border-color)',
+      },
+
+      backgroundColor: {
+        'primary': 'var(--bg-color)',
+        'primary-op': 'var(--bg-op-color)',
+        'second': 'var(--second-bg-color)',
+        'second-op': 'var(--second-bg-op-color)',
+        'accent': 'var(--accent-bg-color)',
+      },
+
+      boxShadow: {
+        'custom': '0 0 10px var(--shadow-color)',
+      },
+
+      borderRadius: {
+        'custom': 'var(--border-radius)',
+      },
+
+      borderWidth: {
+        'light': '0.05rem',
+      },
+
+      inset: {
+        'slice': '0.05rem',
       },
 
       lineHeight: {
@@ -54,9 +86,13 @@ const config: Config = {
       addComponents({
         ".title": {
           color: "var(--text-color)",
-          lineHeight: "normal",
-          fontSize: "1.875rem",
+          lineHeight: "2.25rem",
+          fontSize: "1.5rem",
           fontWeight: "400",
+          "@media (min-width: 408px)": {
+            fontSize: "1.875rem",
+            lineHeight: "normal",
+          },
           "@media (min-width: 768px)": {
             fontSize: "3rem",
           },
@@ -66,15 +102,23 @@ const config: Config = {
         },
         ".text": {
           color: "var(--text-color)",
-          lineHeight: "2.25rem",
-          fontSize: "1.25rem",
+          fontSize: '1.125rem',
+          lineHeight: '1.85rem',
           fontWeight: "300",
+          "@media (min-width: 768px)": {
+            fontSize: "1.25rem",
+            lineHeight: "2.25rem",
+          },
         },
         ".desc": {
           color: "var(--text-color)",
-          lineHeight: "normal",
-          fontSize: "1rem",
+          lineHeight: '1.4rem',
+          fontSize: "0.875rem",
           fontWeight: "300",
+          "@media (min-width: 1280px)": {
+            fontSize: "1rem",
+            lineHeight: "1.6rem",
+          },
         },
         ".up-title": {
           color: "var(--text-color)",
@@ -112,13 +156,14 @@ const config: Config = {
           display: "flex",
           width: "min-content",
           "&:hover": {
-            color: 'var(--second-text-color)',
-            transform: "scale(1.25)",
+            color: "var(--second-text-color)",
+            transform: "scale(1.1)",
             backgroundColor: "var(--bg-color)",
           },
         },
         ".back-shadow": {
-          boxShadow: "inset 1px 1px 0 0 hsla(0,0%,100%,0.5),0 3px 8px 0 var(--shadow-color)",
+          boxShadow:
+            "inset 1px 1px 0 0 hsla(0,0%,100%,0.5),0 3px 8px 0 var(--shadow-color)",
         },
         ".input": {
           border: "0.05rem solid var(--border-op-color)",
@@ -133,6 +178,7 @@ const config: Config = {
           borderRadius: "var(--border-radius)",
           display: "flex",
           alignItems: "center",
+          maxHeight: '53px',
           "@media (min-width: 768px)": {
             padding: "1rem 2rem",
           },
@@ -142,7 +188,8 @@ const config: Config = {
             background: "var(--bg-color)",
             color: "var(--second-text-color)",
             border: "0.05rem solid var(--border-color)",
-            transform: "scale(1.25)",
+            cursor: "pointer",
+            transform: "scale(1.1)",
           },
         },
         ".s-hover": {
@@ -150,22 +197,23 @@ const config: Config = {
             background: "var(--second-bg-color)",
             color: "var(--text-color)",
             border: "0.05rem solid var(--accent-border-color)",
-            transform: "scale(1.25)",
+            cursor: "pointer",
+            transform: "scale(1.1)",
           },
         },
         ".center": {
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
         },
-        ".after-b": {
+        ".border-after": {
           "&::after": {
-            content: "",
+            content: `''`,
             display: "block",
             width: "100%",
             height: "0.05rem",
             background: "var(--bg-op-color)",
-          }
+          },
         },
         ".tag": {
           color: "var(--text-color)",
@@ -175,11 +223,20 @@ const config: Config = {
           border: "0.05rem solid var(--border-op-color)",
           maxWidth: "max-content",
           fontWeight: "300",
+          fontSize: '0.875rem',
+          lineHeight: '1.4rem',
           textTransform: "capitalize",
           margin: "0.25rem",
+        },
+        '.flex-full': {
+          flex: '0 0 100%',
+        },
+        '.flex-half': {
+          flex: '0 0 50%',
         }
       });
     }),
   ],
 };
+
 export default config;

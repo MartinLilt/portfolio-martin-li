@@ -1,6 +1,5 @@
 import { FC } from "react";
 import s from "./Footer.module.css";
-import { IconComponent } from "@/components";
 
 const Footer: FC = () => {
   return (

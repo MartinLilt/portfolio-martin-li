@@ -8,7 +8,7 @@ const About: FC = () => {
       <div className={`custom-c ${s.container}`}>
         <div className={s.content}>
           <h2 className={s.title}>About me</h2>
-          <p className={s.text}>
+          <p className={s.desc}>
             Hi 👋, I cooperate with Digital Agencies on a regular basis. I am
             mainly engaged in UI development for websites with B2B and B2C
             business approaches.
