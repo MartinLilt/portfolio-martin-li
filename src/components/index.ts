@@ -15,6 +15,10 @@ import ModalToastComponent from "./modalTempl/ModalToast";
 import SocialListComponent from "./socialList/SocialList";
 import NavListComponent from "./navList/NavList";
 import ButtonConstrComponent from "./buttonConstructor/ButtonConstr";
+import PreloaderComponent from "./preloader/Preloader";
+import Object3DTemplComponent from "./object3DTempl/Object3DTempl";
+import ErrorBoundaryComponent from "./errorBoundary/ErrorBoundary";
+import ImageLoaderComponent from "./imageLoader/ImageLoader";
 
 export {
     LogoComponent,
@@ -33,5 +37,9 @@ export {
     SocialListComponent,
     NavListComponent,
     ButtonConstrComponent,
-    ModalToastComponent
+    ModalToastComponent,
+    PreloaderComponent,
+    Object3DTemplComponent,
+    ErrorBoundaryComponent,
+    ImageLoaderComponent
 }

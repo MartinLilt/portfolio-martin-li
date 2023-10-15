@@ -1,28 +1,28 @@
 Here is the plan:
 
 2023.10.05:
-done - Resolve the issue with my feedback form and useRef = null.
-done - Implement a scrolling menu for cookies and a back button.
-done - Create and configure a modal window for cookies.
+<!-- done - Resolve the issue with my feedback form and useRef = null. -->
+<!-- done - Implement a scrolling menu for cookies and a back button. -->
+<!-- done - Create and configure a modal window for cookies. -->
 
 2023.10.06:
-done - Add validation fields to the feedback form.
+<!-- done - Add validation fields to the feedback form. -->
 - Complete the service page for cases.
-done - Finish configuring Tailwind CSS style groups.
+<!-- done - Finish configuring Tailwind CSS style groups. -->
 
 2023.10.07:
 - Finalize the portfolio page for cases.
-- Simplify CSS stylesheet classes.
-- Implement a website preloader.
+<!-- done - Simplify CSS stylesheet classes. -->
+<!-- done - Implement a website preloader. -->
 
 2023.10.08:
-- Customize the three.js library for the service cards.
-- Redesign the hero title for better responsiveness.
-- Optimize the resume section for improved UX performance.
+<!-- done - Customize the three.js library for the service cards. -->
+<!-- done - Redesign the hero title for better responsiveness. -->
+<!-- done - Optimize the resume section for improved UX performance. -->
 
 2023.10.09:
-- Edit the error page to resolve Next.js warnings.
-- Add a custom component to handle element states like isLoading or isError.
+<!-- done - Edit the error page to resolve Next.js warnings. -->
+<!-- done - Add a custom component to handle element states like isLoading or isError. -->
 - Address the issue with react-icons, which is causing excessive fetch requests.
 
 2023.10.10:

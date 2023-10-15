@@ -1,5 +1,10 @@
 .container {
-  @apply pb-40;
+  @apply pb-40 xl:w-1/2;
+}
+
+.container > h3 {
+  @apply after:!hidden text-xl 
+  leading-9 uppercase mb-4;
 }
 
 .content {

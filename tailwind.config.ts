@@ -97,7 +97,7 @@ const config: Config = {
             fontSize: "3rem",
           },
           "@media (min-width: 1280px)": {
-            fontSize: "3.75rem",
+            fontSize: "3rem",
           },
         },
         ".text": {

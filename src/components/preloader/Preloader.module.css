@@ -1,0 +1,8 @@
+.overlay {
+  @apply bg-second absolute 
+  top-0 left-0 w-full h-[100vh] z-50;
+}
+
+.loading {
+    @apply block title;
+}
