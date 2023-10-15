@@ -1,7 +1,6 @@
 import { FC } from "react";
 import s from "./Carousel.module.css";
-import Image from "next/image";
-import { DescEditorComponent, RankedComponent } from "..";
+import { DescEditorComponent, ImageLoaderComponent, RankedComponent } from "..";
 import { ICarousel } from "./carousel.interface";
 
 const CarouselTemplate: FC<ICarousel> = ({
@@ -15,13 +14,13 @@ const CarouselTemplate: FC<ICarousel> = ({
     <li className={s.sentence}>
       <span className={s.client}>{`${customerFrom}:`}</span>
       <div className={s.content}>
-        <Image
+        <ImageLoaderComponent
           src={url}
           alt={alt}
-          width={98}
-          height={98}
-          draggable={false}
           className={s.image}
+          sizes={98}
+          style={{ objectPosition: "top" }}
+          isFiil={true}
         />
         <span>
           <p className={s.name}>{customerName}</p>

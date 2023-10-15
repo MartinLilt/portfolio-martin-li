@@ -1,7 +1,4 @@
-.partner {
-  @apply up-title border-after 
-    after:mt-4 after:mb-12;
-}
+
 
 .list {
   @apply flex flex-wrap 
@@ -33,7 +30,7 @@
   @apply pb-40;
 }
 
-.container {
+.box {
   @apply lg:w-4/5 xl:w-2/3;
 }
 

@@ -1,11 +1,11 @@
 import { FC } from "react";
 import s from "./Service.module.css";
 import Link from "next/link";
-import { SectionTemplComponent } from "@/components";
+import { Object3DTemplComponent, SectionTemplComponent } from "@/components";
 
 const Service: FC = () => {
   return (
-    <SectionTemplComponent title="Service" styles="pb-40" sectionId="service">
+    <SectionTemplComponent title="Service" className="pb-40" sectionId="service">
       <ul className={s.list}>
         {[
           {
@@ -43,7 +43,9 @@ const Service: FC = () => {
               className={s.sentence}
             >
               <Link href={href} className={s.link}>
-                <div className={s.canvas}></div>
+                <div className={s.canvas}>
+                  <Object3DTemplComponent />
+                </div>
                 <div className={s.content}>
                   <span className={s.case}>{`Service case (${
                     index + 1

@@ -25,7 +25,7 @@
   @apply border-wrap mb-20 last:mb-0 2md:w-2x1/2 
   2md:last:w-full lg:w-x1/2 hover:border-accent 
   xl:last:w-auto xl:mb-0 xl:mr-4 
-  xl:last:mr-0 xl:w-auto;
+  xl:last:mr-0 xl:w-[unset];
 }
 
 .sentence:last-child > .link {
@@ -34,7 +34,7 @@
 
 .sentence:last-child > .link .canvas {
   @apply 2md:mb-0 2md:mr-4 2md:h-[22rem] xl:h-48 xl:mb-12
-    xl:w-full 2md:w-3x2/2;
+    xl:w-auto 2md:w-3x2/2 xl:mr-0;
 }
 
 .sentence:last-child > .link .content {
@@ -51,8 +51,16 @@
 }
 
 .canvas {
-  @apply w-full border-wrap 
-  mb-12 h-48;
+  @apply w-full border-wrap items-center
+  mb-12 h-48 relative flex justify-center 
+  before:content-[''] before:block before:w-[120%]
+  before:h-[120%];
+}
+
+.canvas::before {
+  -webkit-box-shadow: 0px 20px 21px 7px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 20px 21px 7px rgba(0,0,0,0.5);
+  box-shadow: 0px 20px 21px 7px rgba(0,0,0,0.5);
 }
 
 .link {

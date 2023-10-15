@@ -1,4 +1,4 @@
 .time {
-    @apply tag capitalize w-[225px] 
+    @apply tag capitalize w-[200px] 
     h-[40px] max-w-none;
 }

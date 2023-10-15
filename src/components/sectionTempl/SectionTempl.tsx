@@ -6,14 +6,15 @@ const SectionTempl: FC<ISectionTemplProps> = ({
   children,
   sectionType,
   sectionId,
-  styles,
-  title
+  className,
+  containerCSS,
+  title,
 }) => {
   const Section = sectionType || "section";
   return (
-    <Section className={`${styles}`}>
-      <div id={sectionId} className="-translate-y-12" />
-      <div className="custom-c">
+    <Section className={`${className}`}>
+      {sectionId && <div id={sectionId} className="-translate-y-12" />}
+      <div className={`custom-c ${containerCSS}`}>
         <h3 className={s.title}>{title}</h3>
         {children}
       </div>

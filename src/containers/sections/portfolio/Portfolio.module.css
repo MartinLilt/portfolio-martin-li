@@ -63,7 +63,8 @@
 }
 
 .image {
-  @apply object-cover rounded-xl;
+  @apply object-cover rounded-xl
+   w-full h-full;
 }
 
 .tagtext {
