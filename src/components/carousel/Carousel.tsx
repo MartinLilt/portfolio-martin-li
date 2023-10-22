@@ -12,6 +12,13 @@ const CarouselTemplate: FC<ICarousel> = ({
 }) => {
   return (
     <li className={s.sentence}>
+     <div className={s.box}> <ImageLoaderComponent
+        src={"/frame.png"}
+        alt={""}
+        isFiil={false}
+        sizes={192}
+        className={s.signature}
+      /></div>
       <span className={s.client}>{`${customerFrom}:`}</span>
       <div className={s.content}>
         <ImageLoaderComponent

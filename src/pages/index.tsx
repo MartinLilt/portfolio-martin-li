@@ -12,15 +12,26 @@ import {
   ClientsContainer,
   FeedBackContainer,
 } from "@/containers";
+import { ICvProps, IResumeProps, ISkillsProps } from "@/interfaces";
 
-const Home: NextPage = () => {
+export interface IStaticOptions {
+  options: {
+    cvPageProps: ICvProps[];
+    resumePageProps: IResumeProps[];
+    skillsPageProps: ISkillsProps[];
+  };
+}
+
+const Home: NextPage<IStaticOptions> = ({ options }) => {
+  const { cvPageProps, resumePageProps, skillsPageProps } = options;
+
   return (
     <MainContainer>
       <HeroContainer />
-      <CvContainer />
+      <CvContainer options={cvPageProps} />
       <AboutContainer />
-      <ResumeContainer />
-      <SkillsContainer/>
+      <ResumeContainer options={resumePageProps} />
+      <SkillsContainer options={skillsPageProps} />
       <ServicesContainer />
       <PortfolioContainer />
       <TestimonialsContainer />
@@ -29,5 +40,18 @@ const Home: NextPage = () => {
     </MainContainer>
   );
 };
+
+export async function getStaticProps() {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/${process.env.NEXT_PUBLIC_STATIC_PROPS}`
+  );
+  const options = await res.json();
+
+  return {
+    props: {
+      options,
+    },
+  };
+}
 
 export default Home;

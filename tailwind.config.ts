@@ -74,6 +74,7 @@ const config: Config = {
         "x1/2": "49.5%",
         "2x1/2": "49.25%",
         "3x2/2": "calc(100% / 2 - 1.5rem)",
+        "4x-2": "calc(100% - 2.5rem)",
       },
 
       height: {

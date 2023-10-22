@@ -17,8 +17,8 @@ import NavListComponent from "./navList/NavList";
 import ButtonConstrComponent from "./buttonConstructor/ButtonConstr";
 import PreloaderComponent from "./preloader/Preloader";
 import Object3DTemplComponent from "./object3DTempl/Object3DTempl";
-import ErrorBoundaryComponent from "./errorBoundary/ErrorBoundary";
 import ImageLoaderComponent from "./imageLoader/ImageLoader";
+import TextConstructorComponent from "./textConstructor/TextConstructor";
 
 export {
     LogoComponent,
@@ -40,6 +40,6 @@ export {
     ModalToastComponent,
     PreloaderComponent,
     Object3DTemplComponent,
-    ErrorBoundaryComponent,
-    ImageLoaderComponent
+    ImageLoaderComponent,
+    TextConstructorComponent
 }
