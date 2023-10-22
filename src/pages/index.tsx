@@ -13,6 +13,7 @@ import {
   FeedBackContainer,
 } from "@/containers";
 import { ICvProps, IResumeProps, ISkillsProps } from "@/interfaces";
+import { staticOptions } from "@/static";
 
 export interface IStaticOptions {
   options: {
@@ -42,10 +43,7 @@ const Home: NextPage<IStaticOptions> = ({ options }) => {
 };
 
 export async function getStaticProps() {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/${process.env.NEXT_PUBLIC_STATIC_PROPS}`
-  );
-  const options = await res.json();
+  const options = await staticOptions;
 
   return {
     props: {
