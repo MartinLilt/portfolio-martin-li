@@ -32,3 +32,12 @@
 .ranked {
   @apply desc;
 }
+
+.signature {
+  filter: drop-shadow(-45px 35px 1px rgba(255, 255, 255, 0.139));
+}
+
+.box {
+  @apply absolute hidden 4sm:flex
+   justify-end w-full top-[-5%] right-[7%];
+}

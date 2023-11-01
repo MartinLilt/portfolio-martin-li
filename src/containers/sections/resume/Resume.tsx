@@ -1,31 +1,13 @@
 import { IconComponent, SectionTemplComponent } from "@/components";
 import { FC } from "react";
 import s from "./Resume.module.css";
+import { IResumeProps } from "@/interfaces";
 
-const Resume: FC = () => {
+const Resume: FC<{ options: IResumeProps[] }> = ({ options }) => {
   return (
     <SectionTemplComponent title="Resume" className={s.section}>
       <ul className={s.list}>
-        {[
-          {
-            date: { start: "aug 2022", end: "sep 2023" },
-            title: "Upwork",
-            desc: "Fullstack Developer | Long-term Partnership React Expert",
-            logo: "SiUpwork",
-          },
-          {
-            date: { start: "jun 2020", end: "sep 2021" },
-            title: "BotHelp Agency",
-            desc: "Messenger Marketing Specialist | Digital Marketing Strategy Development",
-            logo: "LuMessagesSquare",
-          },
-          {
-            date: { start: "jan 2019", end: "feb 2020" },
-            title: "Fiverr.",
-            desc: "UX / UI Web Designer | User Interface Kits Creator",
-            logo: "TbBrandFiverr",
-          },
-        ].map(({ date, title, desc, logo }, index) => {
+        {options?.map(({ date, title, desc, logo }, index) => {
           return (
             <li key={index} className={s.sentence}>
               <div className="relative">

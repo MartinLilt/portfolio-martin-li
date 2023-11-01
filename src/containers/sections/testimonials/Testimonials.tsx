@@ -6,6 +6,7 @@ import {
   SectionTemplComponent,
 } from "@/components";
 import { useMediaQuery } from "react-responsive";
+import Image from "next/image";
 
 const Testimonials: FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -25,7 +26,6 @@ const Testimonials: FC = () => {
       sectionId="testimonials"
       className="pb-40"
     >
-      {" "}
       <div className={s.content}>
         <button
           type="button"

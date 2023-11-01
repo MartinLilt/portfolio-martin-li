@@ -1,11 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100;400;700&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --text-color: #fff;
+  --text-color: #ffffff;
+  --text-desc-color: #ffffffc4;
   --text-op-color: #ffffff5c;
   --second-text-color: #000;
   --second-text-op-color: #0000005c;

@@ -1,8 +1,10 @@
-import { MainContainer } from '@/containers';
-import { NextPage } from 'next';
+import { IPortfolioProps } from "@/interfaces";
+import { NextPage } from "next";
 
-const Portfolio: NextPage = () => {
-  return <MainContainer>Service item</MainContainer>
+const Portfolio: NextPage<{ options: IPortfolioProps }> = ({ options }) => {
+  return <></>;
 };
+
+// export async function getStaticPaths() {}
 
 export default Portfolio;

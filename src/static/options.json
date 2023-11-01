@@ -1,0 +1,86 @@
+{
+  "cvPageProps": [
+    { "largeValueOfExp": 3, "textDesc": "Years of Experience" },
+    { "largeValueOfExp": 31, "textDesc": "Number of Successful contracts" }
+  ],
+  "skillsPageProps": [
+    {
+      "title": "Front-end Dev.",
+      "icon": { "name": "DiJavascript", "alt": "Front-end icon" },
+      "progress": 87,
+      "descTags": [
+        "JavaScript",
+        "TypeScript",
+        "React.js",
+        "Vue.js",
+        "Next.js",
+        "Nuxt.js",
+        "Gatsby.js",
+        "Redux.js"
+      ]
+    },
+    {
+      "title": "Back-end Dev.",
+      "icon": { "name": "FaNodeJs", "alt": "Back-end icon" },
+      "progress": 75,
+      "descTags": [
+        "JavaScript",
+        "TypeScript",
+        "Node.js",
+        "Express.js",
+        "REST API",
+        "Websockets",
+        "PHP",
+        "Symfony"
+      ]
+    },
+    {
+      "title": "DevOps Skills",
+      "icon": { "name": "SiDocker", "alt": "DevOps icon" },
+      "progress": 65,
+      "descTags": [
+        "Docker",
+        "CI / CD",
+        "Git-actions",
+        "Jenkins",
+        "Jest tests",
+        "E2E",
+        "Unit tests"
+      ]
+    },
+    {
+      "title": "UX/UI Design",
+      "icon": { "name": "CgFigma", "alt": "Web design icon" },
+      "progress": 60,
+      "descTags": [
+        "Web design",
+        "UI kits",
+        "UX Prototyping",
+        "Responsive design",
+        "Figma",
+        "Photoshop",
+        "Adobe Effect"
+      ]
+    }
+  ],
+  "resumePageProps": [
+    {
+      "date": { "start": "aug 2022", "end": "sep 2023" },
+      "title": "Upwork",
+      "desc": "Fullstack Developer | Long-term Partnership React Expert",
+      "logo": "SiUpwork"
+    },
+    {
+      "date": { "start": "jun 2020", "end": "sep 2021" },
+      "title": "BotHelp Agency",
+      "desc": "Messenger Marketing Specialist | Digital Marketing Strategy Development",
+      "logo": "LuMessagesSquare"
+    },
+    {
+      "date": { "start": "jan 2019", "end": "feb 2020" },
+      "title": "Fiverr.",
+      "desc": "UX / UI Web Designer | User Interface Kits Creator",
+      "logo": "TbBrandFiverr"
+    }
+  ]
+}
