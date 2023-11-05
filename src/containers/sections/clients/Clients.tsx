@@ -2,8 +2,10 @@ import { FC } from "react";
 import s from "./Clients.module.css";
 import circle from "@/assets/icons/circle.svg";
 import { ImageLoaderComponent, SectionTemplComponent } from "@/components";
+import { ICustomerLogoPreview } from "@/interfaces";
 
-const Clients: FC = () => {
+const Clients: FC<{ options: ICustomerLogoPreview[] }> = ({ options }) => {
+  
   return (
     <SectionTemplComponent
       title="Partners"
@@ -12,25 +14,28 @@ const Clients: FC = () => {
     >
       <div>
         <ul className={s.list}>
-          {[
-            { img: { url: "/01.png", alt: "Logo" } },
-            { img: { url: "/02.png", alt: "Logo" } },
-            { img: { url: "/01.png", alt: "Logo" } },
-            { img: { url: "/02.png", alt: "Logo" } },
-            { img: { url: "/01.png", alt: "Logo" } },
-          ].map(({ img: { url, alt } }, index) => {
-            return (
-              <li key={index} className={s.sentence}>
-                <ImageLoaderComponent
-                  src={url}
-                  alt={alt}
-                  sizes={80}
-                  className={s.image}
-                  isFiil={false}
-                />
-              </li>
-            );
-          })}
+          {options?.map(
+            ({ customerAlert, customerLink, customerLogo }, index) => {
+              return (
+                <li key={index} className={s.sentence}>
+                  <a
+                    href={customerLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block border-wrap"
+                  >
+                    <ImageLoaderComponent
+                      src={customerLogo}
+                      alt={customerAlert}
+                      sizes={80}
+                      className={s.image}
+                      isFiil={false}
+                    />
+                  </a>
+                </li>
+              );
+            }
+          )}
         </ul>
         <div className={s.box}>
           <span className={s.guarantees}>My guarantees:</span>
@@ -51,5 +56,3 @@ const Clients: FC = () => {
 };
 
 export default Clients;
-
-

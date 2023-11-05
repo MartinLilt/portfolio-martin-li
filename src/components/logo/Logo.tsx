@@ -11,6 +11,7 @@ const Logo: FC<{ logoSize: number }> = ({ logoSize }) => {
   const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
     if (isHomePage) {
       e.preventDefault();
+      document.documentElement.classList.toggle("dark-theme");
     }
   };
 

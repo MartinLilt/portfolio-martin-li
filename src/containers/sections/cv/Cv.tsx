@@ -1,22 +1,25 @@
 import { FC } from "react";
 import s from "./Cv.module.css";
-import { ICvProps } from "@/interfaces";
+import { ICvPreview } from "@/interfaces";
 
-const Cv: FC<{ options: ICvProps[] }> = ({ options }) => {
+const Cv: FC<{ options: [ICvPreview] }> = ({ options }) => {
+  const { publishedAt, uploadingCv } = options[0];
+
   const handleDownloadCvFile = () => {
-    const googleDriveFileId = process.env.NEXT_PUBLIC_CV_ID;
-    const googleDriveUrl = `${process.env.NEXT_PUBLIC_CV_LINK}&id=${googleDriveFileId}`;
-    const a = document.createElement("a");
-    a.href = googleDriveUrl;
-    a.download = "cv.pdf";
-    a.click();
+    const link = document.createElement("a");
+    link.href = uploadingCv;
+    link.download = `martinli-cv-${publishedAt}.pdf`;
+    link.click();
   };
 
   return (
     <section className={s.section}>
       <div className={`custom-c ${s.container}`}>
         <ul className={s.list}>
-          {options?.map(({ largeValueOfExp, textDesc }, index) => {
+          {[
+            { largeValueOfExp: 3, textDesc: "Years of Experience" },
+            { largeValueOfExp: 31, textDesc: "Number of Successful contracts" },
+          ].map(({ largeValueOfExp, textDesc }, index) => {
             return (
               <li className={s.sentence} key={index}>
                 <span className={s.text}>{largeValueOfExp}</span>
@@ -26,7 +29,7 @@ const Cv: FC<{ options: ICvProps[] }> = ({ options }) => {
           })}
         </ul>
         <button
-          title="Click to download my CV..."
+          title={`Click to download my CV...`}
           className={s.button}
           type="button"
           onClick={handleDownloadCvFile}

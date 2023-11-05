@@ -12,38 +12,41 @@ import {
   ClientsContainer,
   FeedBackContainer,
 } from "@/containers";
-import { ICvProps, IResumeProps, ISkillsProps } from "@/interfaces";
-import { staticOptions } from "@/static";
+import { IPreview } from "@/interfaces";
+import { sanityKeyPreview } from "@/keys";
+import { sanityClientReq } from "@/helpers";
 
-export interface IStaticOptions {
-  options: {
-    cvPageProps: ICvProps[];
-    resumePageProps: IResumeProps[];
-    skillsPageProps: ISkillsProps[];
-  };
-}
+const Home: NextPage<IPreview> = ({ options }) => {
 
-const Home: NextPage<IStaticOptions> = ({ options }) => {
-  const { cvPageProps, resumePageProps, skillsPageProps } = options;
+  const {
+    customerLogos,
+    cvFile,
+    portfolio,
+    resume,
+    services,
+    skills,
+    social,
+    testimonials,
+  } = options;
 
   return (
-    <MainContainer>
+    <MainContainer options={social}>
       <HeroContainer />
-      <CvContainer options={cvPageProps} />
+      <CvContainer options={cvFile} />
       <AboutContainer />
-      <ResumeContainer options={resumePageProps} />
-      <SkillsContainer options={skillsPageProps} />
-      <ServicesContainer />
-      <PortfolioContainer />
-      <TestimonialsContainer />
-      <ClientsContainer />
-      <FeedBackContainer />
+      <ResumeContainer options={resume} />
+      <SkillsContainer options={skills} />
+      <ServicesContainer options={services} />
+      <PortfolioContainer options={portfolio} />
+      <TestimonialsContainer options={testimonials} />
+      <ClientsContainer options={customerLogos} />
+      <FeedBackContainer options={social} />
     </MainContainer>
   );
 };
 
 export async function getStaticProps() {
-  const options = await staticOptions;
+  const options = await sanityClientReq(sanityKeyPreview);
 
   return {
     props: {

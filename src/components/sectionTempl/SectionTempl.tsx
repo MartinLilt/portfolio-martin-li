@@ -15,7 +15,7 @@ const SectionTempl: FC<ISectionTemplProps> = ({
     <Section className={`${className}`}>
       {sectionId && <div id={sectionId} className="-translate-y-12" />}
       <div className={`custom-c ${containerCSS}`}>
-        <h3 className={s.title}>{title}</h3>
+        {title && <h3 className={s.title}>{title}</h3>}
         {children}
       </div>
     </Section>

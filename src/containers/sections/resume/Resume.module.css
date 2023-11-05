@@ -35,6 +35,5 @@
 }
 
 .description {
-    @apply block text 
-    4sm:w-10/12 md:w-2/3;
+    @apply block text mb-4;
 }

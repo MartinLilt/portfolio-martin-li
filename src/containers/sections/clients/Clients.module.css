@@ -2,15 +2,15 @@
 
 .list {
   @apply flex flex-wrap 
-    mb-[4.5rem] translate-x-[-0.5rem];
+    mb-[4.5rem] translate-x-[-0.25rem];
 }
 
 .sentence {
-  @apply border-wrap m-1 h-14;
+  @apply m-1 h-min;
 }
 
 .image {
-  @apply opacity-60;
+  @apply opacity-60 !h-5;
 }
 
 .text {

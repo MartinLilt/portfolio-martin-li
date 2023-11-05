@@ -12,8 +12,9 @@ import { useModal } from "@/hooks";
 import { ModalEnums } from "@/providers";
 import { IModalOverlayState } from "./modal.interface";
 import { useMediaQuery } from "react-responsive";
+import { ISocialMediaPreview } from "@/interfaces";
 
-const ModalOverlay: FC = () => {
+const ModalOverlay: FC<{ options?: ISocialMediaPreview[] }> = ({ options }) => {
   const { mobileMenu, cookiesModal } = ModalEnums;
   const { isModalOpen, toggleModal } = useModal();
   const isDesktop = useMediaQuery({ query: "(min-width: 1280px)" });
@@ -44,41 +45,7 @@ const ModalOverlay: FC = () => {
       <div className={s.overlay} style={{ display }}>
         <div className={s.box}>
           <SocialListComponent
-            options={[
-              {
-                link: {
-                  href: "https://www.linkedin.com/in/martin-liminovic-44046b21a/",
-                  alt: "linkedin",
-                },
-                icon: "RiLinkedinFill",
-              },
-              {
-                link: { href: "https://t.me/limi_amm", alt: "telegram" },
-                icon: "FaTelegram",
-              },
-              {
-                link: { href: "https://wa.me/37065866504", alt: "whatsapp" },
-                icon: "RiWhatsappFill",
-              },
-              {
-                link: { href: "https://github.com/MartinLilt", alt: "github" },
-                icon: "BiLogoGithub",
-              },
-              {
-                link: {
-                  href: "https://www.upwork.com/freelancers/~013353693d309695d7",
-                  alt: "upwork",
-                },
-                icon: "BiLogoUpwork",
-              },
-              {
-                link: {
-                  href: "https://www.fiverr.com/martinliminovic?up_rollout=true",
-                  alt: "fiverr",
-                },
-                icon: "TbBrandFiverr",
-              },
-            ]}
+            options={options}
           />
           <ButtonComponent
             buttonTitle={"Click to close modal.."}

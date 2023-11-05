@@ -10,9 +10,9 @@ const About: FC = () => {
       containerCSS={s.container}
     >
       <p className={s.desc}>
-        Hi 👋, I cooperate with Digital Agencies on a regular basis. I am mainly
-        engaged in UI development for websites with B2B and B2C business
-        approaches.
+        Hello, I am a web developer and designer with expertise in catering to
+        the needs of digital agencies. My focus primarily revolves around
+        servicing both B2B and B2C enterprises on a consistent basis.
       </p>
     </SectionTemplComponent>
   );
