@@ -1,6 +1,7 @@
 import { CaseContainer, MainContainer } from "@/containers";
 import { sanityClientReq } from "@/helpers";
 import { IPostOptions } from "@/interfaces";
+import { portfolioKeyCase } from "@/keys";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 
 const Portfolio = ({
@@ -23,25 +24,9 @@ export const getStaticPaths = (async () => {
 }) satisfies GetStaticPaths;
 
 export const getStaticProps = (async ({ params }) => {
-  const post = await sanityClientReq(
-    `*[_type == "portfolio" && casepath == $slug][0]{
-      title,
-      "caseTags": casetags,
-      "caseContent": caseMainContent.content,
-      "caseDate": caseMainContent.publishedAt,
-      "caseRate": caseMainContent.customerRanked,
-      "caseComment": caseMainContent.customerComment,
-      "casePreviewImage": casePreview.image.asset->url,
-      "caseImages": caseMainContent.images[]{
-        asset-> {
-          url
-        }
-      }
-    }`,
-    {
-      slug: params?.slug as string,
-    }
-  );
+  const post = await sanityClientReq(portfolioKeyCase, {
+    slug: params?.slug as string,
+  });
 
   return {
     props: {
