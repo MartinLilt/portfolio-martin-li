@@ -1,22 +1,22 @@
 import { FC } from "react";
 import s from "./SocialList.module.css";
 import { IconComponent } from "..";
-import { ISocialOptions } from "./socialList.interface";
+import { ISocialMediaPreview } from "@/interfaces";
 
-const SocialList: FC<ISocialOptions> = ({ options }) => {
+const SocialList: FC<{ options?: ISocialMediaPreview[] }> = ({ options }) => {
   return (
     <ul className={s.list}>
-      {options?.map(({ link: { href, alt }, icon }, index) => {
+      {options?.map(({ iconName, iconReact, iconUrl }, index) => {
         return (
           <li key={index} className={s.sentence}>
             <a
-              href={href}
-              title={`Click to open my ${alt}..`}
+              href={iconUrl}
+              title={`Click to open my ${iconName}..`}
               target="_blank"
               rel="noopener noreferrer"
               className={s.link}
             >
-              <IconComponent nameIcon={icon} />
+              <IconComponent nameIcon={iconReact} />
             </a>
           </li>
         );

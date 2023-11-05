@@ -23,7 +23,7 @@ Here is the plan:
 2023.10.09:
 <!-- done - Edit the error page to resolve Next.js warnings. -->
 <!-- done - Add a custom component to handle element states like isLoading or isError. -->
-- Address the issue with react-icons, which is causing excessive fetch requests.
+<!-- - Address the issue with react-icons, which is causing excessive fetch requests. -->
 
 2023.10.10:
 - Create a custom cursor component to apply different CSS styles on various events.
@@ -36,14 +36,14 @@ Here is the plan:
 - Implement aria-labels for the website and test the results in the devTools audit section.
 
 2023.10.12:
-- Integrate the sanity.io CMS system.
-- Create sanity.io schemas for website data.
+<!-- - Integrate the sanity.io CMS system. -->
+<!-- - Create sanity.io schemas for website data. -->
 - Implement validation for sanity.io schemas.
 
 2023.10.13:
-- Implement API integration from sanity.io.
-- Create static paths for dynamic slug web pages.
-- Enable lazy loading of dynamic components.
+<!-- - Implement API integration from sanity.io. -->
+<!-- - Create static paths for dynamic slug web pages. -->
+<!-- - Enable lazy loading of dynamic components. -->
 
 2023.10.14:
 - Configure Mailchimp for subscribing and sending customer emails.
@@ -56,6 +56,6 @@ Here is the plan:
 - Configure and optimize the next.js image components.
 
 2023.10.16:
-- Review and improve the prop types following the typeScript (TS) rules in project components.
+<!-- - Review and improve the prop types following the typeScript (TS) rules in project components. -->
 - Review and improve file, directory, and function names to increase the code understanding level.
 - Add the optimizer for unused CSS properties and test it.

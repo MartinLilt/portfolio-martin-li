@@ -1,4 +1,4 @@
-import {Rule} from '@sanity/types'
+import { Rule } from '@sanity/types';
 
 export default {
   name: 'resume',
@@ -13,16 +13,42 @@ export default {
       description: 'Resume',
     },
     {
-      name: 'description',
+      name: 'company',
       type: 'string',
+      title: 'Company',
+      description: 'Resume',
+    },
+    {
+      name: 'location',
+      type: 'string',
+      title: 'Location',
+      description: 'Resume',
+    },
+    {
+      name: 'description',
+      type: 'text',
       title: 'Description',
       description: 'description',
     },
     {
-      name: 'logo',
-      type: 'string',
-      title: 'Logo',
+      name: 'contract',
+      type: 'object',
+      title: 'Contract Type',
       description: 'logo',
+      fields: [
+        {
+          name: 'contractLocation',
+          type: 'string',
+          title: 'Contract Location',
+          description: 'description',
+        },
+        {
+          name: 'contractType',
+          type: 'string',
+          title: 'Contract Type',
+          description: 'description',
+        },
+      ]
     },
     {
       name: 'date',
@@ -32,31 +58,17 @@ export default {
       fields: [
         {
           name: 'startDate',
-          type: 'datetime',
+          type: 'string',
           title: 'Start Date',
           description: 'Date and time when the post was published.',
-          validation: (Rule: Rule) =>
-            Rule.required().custom((publishedAt: string) => {
-              if (!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/.test(publishedAt)) {
-                return 'Invalid date format. It should be in the format "YYYY-MM-DDTHH:MM:SSZ".'
-              }
-              return true // Date format is correct
-            }),
         },
         {
           name: 'endDate',
-          type: 'datetime',
+          type: 'string',
           title: 'End Date',
           description: 'Date and time when the post was published.',
-          validation: (Rule: Rule) =>
-            Rule.required().custom((publishedAt: string) => {
-              if (!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/.test(publishedAt)) {
-                return 'Invalid date format. It should be in the format "YYYY-MM-DDTHH:MM:SSZ".'
-              }
-              return true // Date format is correct
-            }),
         },
       ],
     },
   ],
-}
+};

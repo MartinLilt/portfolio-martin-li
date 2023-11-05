@@ -1,0 +1,30 @@
+:root.dark-theme {
+    --text-color: #000;
+    --text-desc-color: #000000c4;
+    --text-op-color: #0000005c;
+    --second-text-color: #fff;
+    --second-text-op-color: #ffffff5c;
+    --accent-text-color: rgb(85, 230, 165);
+  
+    --border-color: #000;
+    --border-op-color: #0000005c;
+    --second-border-color: #fff;
+    --second-border-op-color: #ffffff5c;
+    --accent-border-color: rgb(85, 230, 165);
+  
+    --bg-color: #000;
+    --bg-op-color: #0000005c;
+    --second-bg-color: #fff;
+    --second-bg-op-color: #ffffff5c;
+    --accent-bg-color: rgb(85, 230, 165);
+  
+    --button-color: #000;
+    --button-op-color: #0000005c;
+    --second-button-color: #fff;
+    --second-button-op-color: #ffffff5c;
+    --accent-button-color: rgb(85, 230, 165);
+  
+    --shadow-color: #fff;
+    --border-radius: 0.75rem;
+  }
+  

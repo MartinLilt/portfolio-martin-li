@@ -2,77 +2,59 @@ import { FC } from "react";
 import s from "./Service.module.css";
 import Link from "next/link";
 import { Object3DTemplComponent, SectionTemplComponent } from "@/components";
+import { IServicesPreview } from "@/interfaces";
 
-const Service: FC = () => {
+const Service: FC<{ options: IServicesPreview[] }> = ({ options }) => {
   return (
-    <SectionTemplComponent title="Service" className="pb-40" sectionId="service">
+    <SectionTemplComponent
+      title="Service"
+      className="pb-40"
+      sectionId="service"
+    >
       <ul className={s.list}>
-        {[
-          {
-            title: "What is Business to Business?",
-            link: {
-              href: "/service/business-to-business",
-              alt: "b2b service",
-            },
-            desc: "Modern and mobile-ready website that will help you reach all of your marketing.",
-            taglist: ["b2b", "UX / UI design", "web development"],
-          },
-          {
-            title: "What is Business to Client?",
-            link: {
-              href: "/service/business-to-client",
-              alt: "b2c service",
-            },
-            desc: "Modern and mobile-ready website that will help you reach all of your marketing.",
-            taglist: ["b2c", "UX / UI design", "web development"],
-          },
-          {
-            title: "What is Mobile to Client?",
-            link: {
-              href: "/service/mobile-development",
-              alt: "mobile development service",
-            },
-            desc: "Modern and mobile-ready website that will help you reach all of your marketing.",
-            taglist: ["mobile", "UX / UI design", "web development"],
-          },
-        ].map(({ title, link: { href, alt }, desc, taglist }, index) => {
-          return (
-            <li
-              key={index}
-              title={`Click to open ${alt} case..`}
-              className={s.sentence}
-            >
-              <Link href={href} className={s.link}>
-                <div className={s.canvas}>
-                  <Object3DTemplComponent />
-                </div>
-                <div className={s.content}>
-                  <span className={s.case}>{`Service case (${
-                    index + 1
-                  }/3)`}</span>
-                  <div className={s.box}>
-                    <h4 className={s.name}>{title}</h4>
-                    <p className={s.description}>{desc}</p>
+        {options?.map(
+          (
+            { title, tags, description, link: { alert, href }, object3DFile },
+            index
+          ) => {
+            return (
+              <li
+                key={index}
+                title={`Click to open ${alert} case..`}
+                className={s.sentence}
+              >
+                <Link href={href} className={s.link}>
+                  <div className={s.canvas}>
+                    <Object3DTemplComponent />
                   </div>
-                  <ul className={s.taglist}>
-                    {taglist?.map((item, index) => (
-                      <li key={index} className={s.tagsentence}>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </Link>
-              <ul className={s.tablist}>
-                {taglist?.map((item, index) => (
-                  <li key={index} className={s.tagsentence}>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </li>
-          );
-        })}
+                  <div className={s.content}>
+                    <span className={s.case}>{`Service case (${
+                      index + 1
+                    }/3)`}</span>
+                    <div className={s.box}>
+                      <h4 className={s.name}>{title}</h4>
+                      <p className={s.description}>{description}</p>
+                    </div>
+                    <ul className={s.taglist}>
+                      {tags?.map((item, index) => (
+                        <li key={index} className={s.tagsentence}>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </Link>
+                <ul className={s.tablist}>
+                  {tags?.map((item, index) => (
+                    <li key={index} className={s.tagsentence}>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            );
+          }
+        )}
       </ul>
     </SectionTemplComponent>
   );

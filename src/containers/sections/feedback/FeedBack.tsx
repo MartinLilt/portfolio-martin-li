@@ -7,8 +7,9 @@ import {
   SectionTemplComponent,
   SocialListComponent,
 } from "@/components";
+import { ISocialMediaPreview } from "@/interfaces";
 
-const FeedBack: FC = () => {
+const FeedBack: FC<{ options: ISocialMediaPreview[] }> = ({ options }) => {
   const handleSendEmail = () => {};
 
   return (
@@ -30,46 +31,7 @@ const FeedBack: FC = () => {
               we&rsquo;d love to hear from you!
             </p>
           </div>
-          <SocialListComponent
-            options={[
-              {
-                link: {
-                  href: "https://www.linkedin.com/in/martin-liminovic-44046b21a/",
-                  alt: "linkedin",
-                },
-                icon: "RiLinkedinFill",
-              },
-              {
-                link: { href: "https://t.me/limi_amm", alt: "telegram" },
-                icon: "FaTelegram",
-              },
-              {
-                link: { href: "https://wa.me/37065866504", alt: "whatsapp" },
-                icon: "RiWhatsappFill",
-              },
-              {
-                link: {
-                  href: "https://github.com/MartinLilt",
-                  alt: "github",
-                },
-                icon: "BiLogoGithub",
-              },
-              {
-                link: {
-                  href: "https://www.upwork.com/freelancers/~013353693d309695d7",
-                  alt: "upwork",
-                },
-                icon: "BiLogoUpwork",
-              },
-              {
-                link: {
-                  href: "https://www.fiverr.com/martinliminovic?up_rollout=true",
-                  alt: "fiverr",
-                },
-                icon: "TbBrandFiverr",
-              },
-            ]}
-          />
+          <SocialListComponent options={options} />
         </div>
         <div className="xl:w-x1/2 mt-12 xl:mt-0">
           <span className={s.call}>Feedback form:</span>

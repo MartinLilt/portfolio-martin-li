@@ -12,23 +12,9 @@ export default {
     },
     {
       name: 'icon',
-      type: 'object',
-      title: 'Title',
+      type: 'string',
+      title: 'Name',
       description: 'Description',
-      fields: [
-        {
-          name: 'name',
-          type: 'string',
-          title: 'Name',
-          description: 'Description',
-        },
-        {
-          name: 'alert',
-          type: 'string',
-          title: 'Alert',
-          description: 'Description',
-        },
-      ],
     },
     {
       name: 'progress',

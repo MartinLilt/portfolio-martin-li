@@ -19,6 +19,12 @@ export default {
       },
     },
     {
+      name: 'isHomePage',
+      type: 'boolean',
+      title: 'Is Home Page',
+      description: 'Title of case.',
+    },
+    {
       name: 'link',
       type: 'object',
       title: 'Links',
@@ -40,16 +46,9 @@ export default {
     },
     {
       name: 'description',
-      type: 'string',
+      type: 'text',
       title: 'Description',
       description: 'description',
-      validation: (Rule: Rule) => {
-        Rule.required()
-          .min(5)
-          .warning('Description should be at least 5 characters')
-          .max(100)
-          .warning('Description should be no longer than 100 characters')
-      },
     },
     {
       name: 'tags',
@@ -57,26 +56,12 @@ export default {
       title: 'Tags',
       of: [{type: 'string'}],
       description: 'Case tags related to the content.',
-      validation: (Rule: Rule) => {
-        Rule.required()
-          .min(3)
-          .warning('You must have at least 3 tags')
-          .max(10)
-          .warning('You cannot have more than 10 tags')
-      },
     },
     {
       name: 'object3DFile',
       type: 'file',
       title: '3D Object File',
       description: 'Upload a 3D object file.',
-      validation: (Rule: Rule) =>
-        Rule.required().custom((file: {asset?: Record<string, unknown>}) => {
-          if (!file || !file.asset) {
-            return 'Please upload a 3D object file.'
-          }
-          return true
-        }),
     },
   ],
 }

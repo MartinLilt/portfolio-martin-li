@@ -11,6 +11,7 @@ import PortfolioContainer from "./sections/portfolio/Portfolio";
 import TestimonialsContainer from "./sections/testimonials/Testimonials";
 import ClientsContainer from "./sections/clients/Clients";
 import FeedBackContainer from "./sections/feedback/FeedBack";
+import CaseContainer from "./sections/case/Case";
 
 export {
     HeaderContainer,
@@ -25,5 +26,6 @@ export {
     PortfolioContainer,
     TestimonialsContainer,
     ClientsContainer,
-    FeedBackContainer
+    FeedBackContainer,
+    CaseContainer
 }
